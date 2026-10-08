@@ -25,12 +25,12 @@
     </p>
 
 
+    <!-- SECTION 1 -->
+
     <section>
 
       <h2>01 — WHERE AUSTRALIA MOVES</h2>
 
-
-      <!-- CHART 1 -->
 
       <div class="chart-block">
 
@@ -46,8 +46,6 @@
       </div>
 
 
-      <!-- CHART 2 -->
-
       <div class="chart-block">
 
         <h3>Which capitals carry the most passengers?</h3>
@@ -61,8 +59,6 @@
 
       </div>
 
-
-      <!-- CHART 3 -->
 
       <div class="chart-block">
 
@@ -80,8 +76,6 @@
       </div>
 
 
-      <!-- CHART 4 -->
-
       <div class="chart-block">
 
         <h3>Which capitals use public transport most intensively?</h3>
@@ -96,8 +90,38 @@
 
       </div>
 
+    </section>
+
+
+
+    <!-- SECTION 2 -->
+
+    <section>
+
+      <h2>02 — EVERY CITY MOVES DIFFERENTLY</h2>
+
+      <p class="section-intro">
+        Public transport systems are not structured the same way across Australia.
+        Different cities depend on different modes to move their passengers.
+      </p>
+
+
+      <div class="chart-block">
+
+        <h3>Which transport mode dominates each capital?</h3>
+
+        <p>
+          Equal-sized symbols give every capital the same visual importance,
+          while colour identifies the mode carrying the largest number of
+          passenger trips in 2024–25.
+        </p>
+
+        <div id="chart5"></div>
+
+      </div>
 
     </section>
+
 
   </main>
 
@@ -107,40 +131,38 @@
     vegaEmbed(
       "#chart1",
       "js/chart1_map_patronage.vg.json",
-      {
-        actions: false
-      }
+      { actions: false }
     ).catch(console.error);
 
 
     vegaEmbed(
       "#chart2",
       "js/chart2_ranked_bar.vg.json",
-      {
-        actions: false
-      }
+      { actions: false }
     ).catch(console.error);
 
 
     vegaEmbed(
       "#chart3",
       "js/chart3_tile_map.vg.json",
-      {
-        actions: false
-      }
+      { actions: false }
     ).catch(console.error);
 
 
     vegaEmbed(
       "#chart4",
       "js/chart4_lollipop_per_resident.vg.json",
-      {
-        actions: false
-      }
+      { actions: false }
+    ).catch(console.error);
+
+
+    vegaEmbed(
+      "#chart5",
+      "js/chart5_dominant_mode_map.vg.json",
+      { actions: false }
     ).catch(console.error);
 
   </script>
-
 
 </body>
 
