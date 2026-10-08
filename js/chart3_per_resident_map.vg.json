@@ -8,60 +8,70 @@
     "type": "mercator"
   },
 
-  "data": {
-    "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/GCCSA/MapServer/0/query?where=1%3D1&outFields=gccsa_name_2021%2Cgccsa_code_2021&returnGeometry=true&outSR=4326&f=geojson",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
-  },
-
   "layer": [
 
     {
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+
+      "transform": [
+        {
+          "filter": "datum.id == 36"
+        }
+      ],
+
       "mark": {
         "type": "geoshape",
         "fill": "#E8ECEF",
-        "stroke": "#FFFFFF",
+        "stroke": "#AAB4BC",
         "strokeWidth": 0.7
       }
     },
 
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/refs/heads/main/data/city_summary_choropleth_ready.csv",
+
+        "format": {
+          "type": "csv",
+
+          "parse": {
+            "Trips_Per_Resident_2024_25": "number",
+            "Total_Trips_Million_2024_25": "number",
+            "Population_2025": "number"
+          }
+        }
+      },
+
       "transform": [
 
         {
-          "lookup": "properties.gccsa_name_2021",
+          "lookup": "GCCSA_Name",
 
           "from": {
 
             "data": {
-              "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/refs/heads/main/data/city_summary_choropleth_ready.csv",
+              "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/GCCSA/MapServer/1/query?where=1%3D1&outFields=gccsa_name_2021%2Cgccsa_code_2021&returnGeometry=true&outSR=4326&f=geojson",
 
               "format": {
-                "type": "csv",
-
-                "parse": {
-                  "Trips_Per_Resident_2024_25": "number",
-                  "Total_Trips_Million_2024_25": "number",
-                  "Population_2025": "number"
-                }
+                "type": "json",
+                "property": "features"
               }
             },
 
-            "key": "GCCSA_Name",
+            "key": "properties.gccsa_name_2021"
+          },
 
-            "fields": [
-              "City",
-              "Trips_Per_Resident_2024_25",
-              "Total_Trips_Million_2024_25",
-              "Population_2025"
-            ]
-          }
+          "as": "geo"
         },
 
         {
-          "filter": "isValid(datum.Trips_Per_Resident_2024_25)"
+          "filter": "isValid(datum.geo)"
         }
 
       ],
@@ -73,6 +83,11 @@
       },
 
       "encoding": {
+
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
 
         "color": {
           "field": "Trips_Per_Resident_2024_25",
