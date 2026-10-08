@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>How Australia Moves</title>
 
@@ -13,7 +12,6 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 
@@ -32,6 +30,7 @@
 
       <h2>01 — WHERE AUSTRALIA MOVES</h2>
 
+
       <h3>Australia's biggest public transport markets</h3>
 
       <p>
@@ -40,6 +39,16 @@
       </p>
 
       <div id="chart1"></div>
+
+
+      <h3>Which capitals carry the most passengers?</h3>
+
+      <p>
+        Ranking the same 2024–25 patronage figures makes the gap between
+        Australia's largest and smaller public transport markets easier to compare.
+      </p>
+
+      <div id="chart2"></div>
 
     </section>
 
@@ -54,7 +63,16 @@
       {
         actions: false
       }
-    );
+    ).catch(console.error);
+
+
+    vegaEmbed(
+      "#chart2",
+      "js/chart2_ranked_bar.vg.json",
+      {
+        actions: false
+      }
+    ).catch(console.error);
 
   </script>
 
