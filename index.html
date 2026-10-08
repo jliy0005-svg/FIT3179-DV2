@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
   <main>
@@ -32,8 +31,9 @@
       <p class="intro">
         Australia's capital cities do not move in the same way.
         This visualisation compares where public transport use is highest,
-        how usage changes after population is considered, and how trains,
-        trams, buses and ferries shape each city's transport system.
+        how usage changes after population is considered, how trains, trams,
+        buses and ferries shape each city's transport system, and how patronage
+        has changed over time.
       </p>
 
     </header>
@@ -215,6 +215,48 @@
 
     </section>
 
+
+    <!-- ================================= -->
+    <!-- SECTION 3 -->
+    <!-- ================================= -->
+
+    <section>
+
+      <h2>03 — FIVE DECADES ON THE MOVE</h2>
+
+      <p class="section-intro">
+        Public transport use has changed substantially over almost five decades.
+        Long-term growth has been interrupted by periods of stagnation and,
+        most dramatically, the COVID-19 disruption.
+      </p>
+
+
+      <!-- CHART 8 -->
+
+      <div class="chart-block">
+
+        <p class="chart-label">LONG-TERM CHANGE</p>
+
+        <h3>Nearly five decades of growth, disruption and recovery</h3>
+
+        <p>
+          Select a capital city to explore how public transport patronage has
+          changed since 1976–77. Drag across the smaller overview chart to focus
+          on a particular period while preserving the full historical context.
+        </p>
+
+        <div id="chart8"></div>
+
+        <div class="takeaway">
+          <strong>How to explore:</strong>
+          Choose a capital from the dropdown, then drag across the lower timeline
+          to zoom into a shorter period.
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
 
@@ -268,8 +310,14 @@
       { actions: false }
     ).catch(console.error);
 
-  </script>
 
+    vegaEmbed(
+      "#chart8",
+      "js/chart8_timeline_overview.vg.json",
+      { actions: false }
+    ).catch(console.error);
+
+  </script>
 
 </body>
 
