@@ -1,0 +1,226 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 600,
+  "height": 360,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "Trips_Per_Resident_2024_25": "number",
+        "Total_Trips_Million_2024_25": "number",
+        "Population_2025": "number"
+      }
+    }
+  },
+
+  "layer": [
+
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#CBD5E1"
+      },
+
+      "encoding": {
+
+        "y": {
+          "field": "City",
+          "type": "nominal",
+
+          "sort": {
+            "field": "Trips_Per_Resident_2024_25",
+            "order": "descending"
+          },
+
+          "title": null,
+
+          "axis": {
+            "labelFontSize": 12,
+            "labelPadding": 8
+          }
+        },
+
+        "x": {
+          "datum": 0,
+          "type": "quantitative"
+        },
+
+        "x2": {
+          "field": "Trips_Per_Resident_2024_25"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "circle",
+        "size": 170,
+        "color": "#173F5F",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+
+      "encoding": {
+
+        "y": {
+          "field": "City",
+          "type": "nominal",
+
+          "sort": {
+            "field": "Trips_Per_Resident_2024_25",
+            "order": "descending"
+          },
+
+          "title": null
+        },
+
+        "x": {
+          "field": "Trips_Per_Resident_2024_25",
+          "type": "quantitative",
+
+          "title": "Public transport trips per resident",
+
+          "scale": {
+            "domain": [0, 140]
+          },
+
+          "axis": {
+            "grid": true,
+            "gridColor": "#E5E7EB",
+            "tickCount": 7,
+            "labelFontSize": 11,
+            "titleFontSize": 12
+          }
+        },
+
+        "tooltip": [
+
+          {
+            "field": "City",
+            "type": "nominal",
+            "title": "Capital city"
+          },
+
+          {
+            "field": "Trips_Per_Resident_2024_25",
+            "type": "quantitative",
+            "title": "Trips per resident",
+            "format": ".1f"
+          },
+
+          {
+            "field": "Total_Trips_Million_2024_25",
+            "type": "quantitative",
+            "title": "Total trips (million)",
+            "format": ".1f"
+          },
+
+          {
+            "field": "Population_2025",
+            "type": "quantitative",
+            "title": "Population",
+            "format": ",.0f"
+          }
+
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 9,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#374151"
+      },
+
+      "encoding": {
+
+        "y": {
+          "field": "City",
+          "type": "nominal",
+
+          "sort": {
+            "field": "Trips_Per_Resident_2024_25",
+            "order": "descending"
+          }
+        },
+
+        "x": {
+          "field": "Trips_Per_Resident_2024_25",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "Trips_Per_Resident_2024_25",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "Trips_Per_Resident_2024_25",
+              "as": "AverageTrips"
+            }
+          ]
+        }
+      ],
+
+      "mark": {
+        "type": "rule",
+        "strokeDash": [5, 4],
+        "strokeWidth": 1.5,
+        "color": "#7C8791"
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "AverageTrips",
+          "type": "quantitative"
+        },
+
+        "tooltip": [
+          {
+            "field": "AverageTrips",
+            "type": "quantitative",
+            "title": "Capital-city average",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+
+  ],
+
+  "config": {
+
+    "background": "white",
+
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "axis": {
+      "domain": false,
+      "tickColor": "#CBD5E1",
+      "labelColor": "#4B5563",
+      "titleColor": "#374151"
+    }
+  }
+}
