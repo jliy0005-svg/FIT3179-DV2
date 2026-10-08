@@ -43,72 +43,10 @@
 
     {
       "data": {
-        "values": [
-          {
-            "City": "Sydney",
-            "Latitude": -33.8688,
-            "Longitude": 151.2093,
-            "Total": 708.551942,
-            "TripsPerResident": 125.655844,
-            "DominantMode": "Train"
-          },
-          {
-            "City": "Melbourne",
-            "Latitude": -37.8136,
-            "Longitude": 144.9631,
-            "Total": 480.203830,
-            "TripsPerResident": 88.344380,
-            "DominantMode": "Train"
-          },
-          {
-            "City": "Brisbane",
-            "Latitude": -27.4698,
-            "Longitude": 153.0251,
-            "Total": 161.642128,
-            "TripsPerResident": 57.046324,
-            "DominantMode": "Bus"
-          },
-          {
-            "City": "Adelaide",
-            "Latitude": -34.9285,
-            "Longitude": 138.6007,
-            "Total": 69.588980,
-            "TripsPerResident": 46.672220,
-            "DominantMode": "Bus"
-          },
-          {
-            "City": "Perth",
-            "Latitude": -31.9505,
-            "Longitude": 115.8605,
-            "Total": 148.717496,
-            "TripsPerResident": 60.632591,
-            "DominantMode": "Bus"
-          },
-          {
-            "City": "Hobart",
-            "Latitude": -42.8821,
-            "Longitude": 147.3272,
-            "Total": 6.716977,
-            "TripsPerResident": 26.315286,
-            "DominantMode": "Bus"
-          },
-          {
-            "City": "Darwin",
-            "Latitude": -12.4634,
-            "Longitude": 130.8456,
-            "Total": 4.646000,
-            "TripsPerResident": 29.168027,
-            "DominantMode": "Bus"
-          },
-          {
-            "City": "Canberra",
-            "Latitude": -35.2809,
-            "Longitude": 149.1300,
-            "Total": 20.582000,
-            "TripsPerResident": 42.469513,
-            "DominantMode": "Bus"
-          }
-        ]
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/refs/heads/main/data/city_summary_chart_ready.csv",
+        "format": {
+          "type": "csv"
+        }
       },
 
       "mark": {
@@ -132,7 +70,7 @@
         },
 
         "size": {
-          "field": "Total",
+          "field": "Total_Trips_Million_2024_25",
           "type": "quantitative",
           "title": "Passenger trips (million)",
           "scale": {
@@ -140,7 +78,9 @@
           },
           "legend": {
             "orient": "bottom",
-            "direction": "horizontal"
+            "direction": "horizontal",
+            "titleFontSize": 12,
+            "labelFontSize": 11
           }
         },
 
@@ -151,19 +91,19 @@
             "title": "Capital city"
           },
           {
-            "field": "Total",
+            "field": "Total_Trips_Million_2024_25",
             "type": "quantitative",
-            "title": "Passenger trips",
+            "title": "Passenger trips (million)",
             "format": ".1f"
           },
           {
-            "field": "TripsPerResident",
+            "field": "Trips_Per_Resident_2024_25",
             "type": "quantitative",
             "title": "Trips per resident",
             "format": ".1f"
           },
           {
-            "field": "DominantMode",
+            "field": "Dominant_Mode",
             "type": "nominal",
             "title": "Dominant mode"
           }
@@ -174,9 +114,20 @@
 
   "config": {
     "background": "white",
+
     "view": {
       "stroke": null
     },
-    "font": "Arial"
+
+    "font": "Arial",
+
+    "title": {
+      "color": "#1F2933"
+    },
+
+    "legend": {
+      "labelColor": "#4B5563",
+      "titleColor": "#1F2933"
+    }
   }
 }
