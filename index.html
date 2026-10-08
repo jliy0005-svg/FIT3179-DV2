@@ -39,10 +39,9 @@
     </header>
 
 
-
-    <!-- ===================== -->
+    <!-- ================================= -->
     <!-- SECTION 1 -->
-    <!-- ===================== -->
+    <!-- ================================= -->
 
     <section>
 
@@ -135,10 +134,9 @@
     </section>
 
 
-
-    <!-- ===================== -->
+    <!-- ================================= -->
     <!-- SECTION 2 -->
-    <!-- ===================== -->
+    <!-- ================================= -->
 
     <section>
 
@@ -147,7 +145,7 @@
       <p class="section-intro">
         Public transport systems are not structured the same way across Australia.
         Some cities depend heavily on trains, while others rely much more strongly
-        on buses, trams or other modes.
+        on buses, trams, light rail or ferries.
       </p>
 
 
@@ -189,10 +187,35 @@
 
       </div>
 
+
+      <!-- CHART 7 -->
+
+      <div class="chart-block">
+
+        <p class="chart-label">NATIONAL MODE SHARE</p>
+
+        <h3>Trains and buses carry most public transport trips</h3>
+
+        <p>
+          Looking across all eight capital cities, trains and buses account
+          for most public transport patronage. Each square represents
+          approximately one percentage point of passenger trips in 2024–25.
+          Hover over the squares to view the exact share and passenger total.
+        </p>
+
+        <div id="chart7"></div>
+
+        <div class="takeaway">
+          <strong>Key takeaway:</strong>
+          Train and bus travel together account for the large majority of
+          capital-city public transport patronage.
+        </div>
+
+      </div>
+
     </section>
 
   </main>
-
 
 
   <script>
@@ -235,6 +258,13 @@
     vegaEmbed(
       "#chart6",
       "js/chart6_mode_heatmap.vg.json",
+      { actions: false }
+    ).catch(console.error);
+
+
+    vegaEmbed(
+      "#chart7",
+      "js/chart7_mode_waffle.vg.json",
       { actions: false }
     ).catch(console.error);
 
