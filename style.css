@@ -1,0 +1,153 @@
+/* =========================
+   HOW AUSTRALIA MOVES
+   FIT3179 DV2
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f3ee;
+  color: #1f2933;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  line-height: 1.6;
+}
+
+
+/* MAIN PAGE */
+
+main {
+  width: min(1180px, calc(100% - 60px));
+  margin: 0 auto;
+
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+
+/* MAIN TITLE */
+
+h1 {
+  margin: 0;
+
+  font-size: 64px;
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  color: #173f5f;
+}
+
+
+/* INTRO SUBTITLE */
+
+main > p {
+  max-width: 700px;
+
+  margin-top: 18px;
+  margin-bottom: 70px;
+
+  font-size: 19px;
+
+  color: #5f6b73;
+}
+
+
+/* STORY SECTIONS */
+
+section {
+  margin-top: 40px;
+
+  padding: 35px;
+
+  background-color: white;
+
+  border: 1px solid #d9dedf;
+  border-radius: 12px;
+}
+
+
+/* SECTION HEADING */
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #d9dedf;
+
+  font-size: 28px;
+
+  color: #173f5f;
+}
+
+
+/* CHART HEADING */
+
+section h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  font-size: 22px;
+
+  color: #1f2933;
+}
+
+
+/* CHART DESCRIPTION */
+
+section p {
+  max-width: 720px;
+
+  margin-bottom: 25px;
+
+  color: #63707c;
+
+  font-size: 15px;
+}
+
+
+/* VEGA VISUALISATION */
+
+#chart1 {
+  width: 100%;
+
+  margin-top: 25px;
+
+  overflow-x: auto;
+}
+
+
+/* VEGA EMBED */
+
+.vega-embed {
+  width: 100%;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+  main {
+    width: calc(100% - 30px);
+    padding-top: 40px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  section {
+    padding: 22px;
+  }
+
+}
