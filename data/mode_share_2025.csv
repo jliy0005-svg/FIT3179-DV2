@@ -1,0 +1,33 @@
+City,Mode,Mode_Order,Trips_Million_2024_25,Mode_Share_Percent_2024_25,Data_Status,Total_Trips_Million_2024_25
+Sydney,Train,1,348.500295,49.1849,reported,708.551942
+Sydney,Tram / light rail,2,46.941257,6.625,reported,708.551942
+Sydney,Bus,3,293.364925,41.4034,reported,708.551942
+Sydney,Ferry,4,19.745465,2.7867,reported,708.551942
+Melbourne,Train,1,201.531244,41.9679,reported,480.20383
+Melbourne,Tram / light rail,2,160.189326,33.3586,reported,480.20383
+Melbourne,Bus,3,118.48326,24.6735,reported,480.20383
+Melbourne,Ferry,4,,,negligible_or_unavailable,480.20383
+Brisbane,Train,1,55.367534,34.2532,reported,161.642128
+Brisbane,Tram / light rail,2,,,not_applicable,161.642128
+Brisbane,Bus,3,98.91404,61.1932,reported,161.642128
+Brisbane,Ferry,4,7.360554,4.5536,reported,161.642128
+Adelaide,Train,1,14.646651,21.0474,reported,69.58898
+Adelaide,Tram / light rail,2,9.011665,12.9498,reported,69.58898
+Adelaide,Bus,3,45.930664,66.0028,reported,69.58898
+Adelaide,Ferry,4,,,not_applicable,69.58898
+Perth,Train,1,61.903744,41.6251,reported,148.717496
+Perth,Tram / light rail,2,,,not_applicable,148.717496
+Perth,Bus,3,85.878594,57.7461,reported,148.717496
+Perth,Ferry,4,0.935158,0.6288,reported,148.717496
+Hobart,Train,1,,,not_applicable,6.716977
+Hobart,Tram / light rail,2,,,not_applicable,6.716977
+Hobart,Bus,3,6.466977,96.2781,reported,6.716977
+Hobart,Ferry,4,0.25,3.7219,reported,6.716977
+Darwin,Train,1,,,not_applicable,4.646
+Darwin,Tram / light rail,2,,,not_applicable,4.646
+Darwin,Bus,3,4.646,100.0,reported,4.646
+Darwin,Ferry,4,,,negligible_or_unavailable,4.646
+Canberra,Train,1,,,not_applicable,20.582
+Canberra,Tram / light rail,2,4.17175,20.2689,reported,20.582
+Canberra,Bus,3,16.41025,79.7311,reported,20.582
+Canberra,Ferry,4,,,not_applicable,20.582
