@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,7 +13,9 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
@@ -24,9 +27,13 @@
       Five decades of public transport across Australia's capital cities
     </p>
 
+
     <section>
 
       <h2>01 — WHERE AUSTRALIA MOVES</h2>
+
+
+      <!-- CHART 1 -->
 
       <h3>Australia's biggest public transport markets</h3>
 
@@ -38,6 +45,8 @@
       <div id="chart1"></div>
 
 
+      <!-- CHART 2 -->
+
       <h3>Which capitals carry the most passengers?</h3>
 
       <p>
@@ -48,15 +57,19 @@
       <div id="chart2"></div>
 
 
+      <!-- CHART 3 -->
+
       <h3>Does city size change the picture?</h3>
 
       <p>
-        This choropleth compares public transport trips per resident rather than
-        total patronage. Darker capital-city regions indicate higher public
-        transport use relative to population in 2024–25.
+        Total patronage partly reflects population size. This tile-grid map
+        instead compares public transport trips per resident, giving each capital
+        equal visual space while approximately preserving its geographic position.
+        Darker tiles indicate more trips per resident in 2024–25.
       </p>
 
       <div id="chart3"></div>
+
 
     </section>
 
@@ -85,13 +98,14 @@
 
     vegaEmbed(
       "#chart3",
-      "js/chart3_per_resident_map.vg.json",
+      "js/chart3_tile_map.vg.json",
       {
         actions: false
       }
     ).catch(console.error);
 
   </script>
+
 
 </body>
 
