@@ -18,7 +18,6 @@ body {
   margin: 0;
 
   background-color: #f5f3ee;
-
   color: #1f2933;
 
   font-family:
@@ -97,7 +96,6 @@ h1 {
   color: #63707c;
 
   font-size: 15px;
-
   line-height: 1.75;
 }
 
@@ -114,7 +112,6 @@ section {
   background-color: white;
 
   border: 1px solid #d9dedf;
-
   border-radius: 12px;
 }
 
@@ -143,6 +140,7 @@ section h2 {
   color: #63707c;
 
   font-size: 15px;
+  line-height: 1.7;
 }
 
 
@@ -192,8 +190,29 @@ section h2 {
   color: #63707c;
 
   font-size: 15px;
-
   line-height: 1.7;
+}
+
+
+/* ======================================
+   KEY TAKEAWAYS
+   ====================================== */
+
+.takeaway {
+  max-width: 780px;
+
+  margin-top: 28px;
+
+  padding: 14px 17px;
+
+  background-color: #eef3f6;
+
+  border-left: 4px solid #173f5f;
+
+  color: #43515c;
+
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 
@@ -206,7 +225,8 @@ section h2 {
 #chart3,
 #chart4,
 #chart5,
-#chart6 {
+#chart6,
+#chart7 {
   width: 100%;
 
   margin-top: 20px;
