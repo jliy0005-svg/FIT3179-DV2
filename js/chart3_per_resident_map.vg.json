@@ -29,26 +29,25 @@
         "type": "geoshape",
         "fill": "#E8ECEF",
         "stroke": "#AAB4BC",
-        "strokeWidth": 0.7
+        "strokeWidth": 0.8
       }
     },
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/refs/heads/main/data/city_summary_choropleth_ready.csv",
-
+        "url": "data/gccsa_capitals_2021.geojson",
         "format": {
-          "type": "csv",
-
-          "parse": {
-            "Trips_Per_Resident_2024_25": "number",
-            "Total_Trips_Million_2024_25": "number",
-            "Population_2025": "number"
-          }
+          "type": "json",
+          "property": "features"
         }
       },
 
       "transform": [
+
+        {
+          "calculate": "datum.properties.gccsa_name_2021",
+          "as": "GCCSA_Name"
+        },
 
         {
           "lookup": "GCCSA_Name",
@@ -56,22 +55,27 @@
           "from": {
 
             "data": {
-              "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/GCCSA/MapServer/1/query?where=1%3D1&outFields=gccsa_name_2021%2Cgccsa_code_2021&returnGeometry=true&outSR=4326&f=geojson",
-
+              "url": "data/city_summary_choropleth_ready.csv",
               "format": {
-                "type": "json",
-                "property": "features"
+                "type": "csv",
+
+                "parse": {
+                  "Trips_Per_Resident_2024_25": "number",
+                  "Total_Trips_Million_2024_25": "number",
+                  "Population_2025": "number"
+                }
               }
             },
 
-            "key": "properties.gccsa_name_2021"
-          },
+            "key": "GCCSA_Name",
 
-          "as": "geo"
-        },
-
-        {
-          "filter": "isValid(datum.geo)"
+            "fields": [
+              "City",
+              "Trips_Per_Resident_2024_25",
+              "Total_Trips_Million_2024_25",
+              "Population_2025"
+            ]
+          }
         }
 
       ],
@@ -79,13 +83,13 @@
       "mark": {
         "type": "geoshape",
         "stroke": "#FFFFFF",
-        "strokeWidth": 1
+        "strokeWidth": 1.2
       },
 
       "encoding": {
 
         "shape": {
-          "field": "geo",
+          "field": "geometry",
           "type": "geojson"
         },
 
@@ -115,6 +119,12 @@
             "field": "City",
             "type": "nominal",
             "title": "Capital city"
+          },
+
+          {
+            "field": "GCCSA_Name",
+            "type": "nominal",
+            "title": "Capital region"
           },
 
           {
