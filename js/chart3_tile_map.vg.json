@@ -1,0 +1,250 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 620,
+  "height": 420,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "Trips_Per_Resident_2024_25": "number",
+        "Total_Trips_Million_2024_25": "number",
+        "Population_2025": "number"
+      }
+    }
+  },
+
+  "transform": [
+    {
+      "lookup": "City",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "City": "Perth",
+              "TileX": 0,
+              "TileY": 3
+            },
+            {
+              "City": "Darwin",
+              "TileX": 3,
+              "TileY": 0
+            },
+            {
+              "City": "Adelaide",
+              "TileX": 3,
+              "TileY": 4
+            },
+            {
+              "City": "Melbourne",
+              "TileX": 4,
+              "TileY": 5
+            },
+            {
+              "City": "Hobart",
+              "TileX": 4,
+              "TileY": 6
+            },
+            {
+              "City": "Brisbane",
+              "TileX": 5,
+              "TileY": 2
+            },
+            {
+              "City": "Sydney",
+              "TileX": 5,
+              "TileY": 3
+            },
+            {
+              "City": "Canberra",
+              "TileX": 5,
+              "TileY": 4
+            }
+          ]
+        },
+
+        "key": "City",
+
+        "fields": [
+          "TileX",
+          "TileY"
+        ]
+      }
+    }
+  ],
+
+  "layer": [
+
+    {
+      "mark": {
+        "type": "square",
+        "size": 5200,
+        "cornerRadius": 7,
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "TileX",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.5, 5.5]
+          },
+          "axis": null
+        },
+
+        "y": {
+          "field": "TileY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.5, 6.5],
+            "reverse": true
+          },
+          "axis": null
+        },
+
+        "color": {
+          "field": "Trips_Per_Resident_2024_25",
+          "type": "quantitative",
+          "title": "Trips per resident",
+
+          "scale": {
+            "scheme": "blues",
+            "domain": [0, 130]
+          },
+
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 220,
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "City",
+            "type": "nominal",
+            "title": "Capital city"
+          },
+          {
+            "field": "Trips_Per_Resident_2024_25",
+            "type": "quantitative",
+            "title": "Trips per resident",
+            "format": ".1f"
+          },
+          {
+            "field": "Total_Trips_Million_2024_25",
+            "type": "quantitative",
+            "title": "Passenger trips (million)",
+            "format": ".1f"
+          },
+          {
+            "field": "Population_2025",
+            "type": "quantitative",
+            "title": "Population",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "dy": -9
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "TileX",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.5, 5.5]
+          }
+        },
+
+        "y": {
+          "field": "TileY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.5, 6.5],
+            "reverse": true
+          }
+        },
+
+        "text": {
+          "field": "City",
+          "type": "nominal"
+        },
+
+        "color": {
+          "value": "#17202A"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "dy": 11
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "TileX",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.5, 5.5]
+          }
+        },
+
+        "y": {
+          "field": "TileY",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-0.5, 6.5],
+            "reverse": true
+          }
+        },
+
+        "text": {
+          "field": "Trips_Per_Resident_2024_25",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+
+        "color": {
+          "value": "#17202A"
+        }
+      }
+    }
+
+  ],
+
+  "config": {
+
+    "background": "white",
+
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "legend": {
+      "labelColor": "#4B5563",
+      "titleColor": "#1F2933"
+    }
+  }
+}
