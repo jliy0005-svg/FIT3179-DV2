@@ -1,0 +1,296 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 700,
+  "height": 400,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/covid_waterfall.csv",
+
+    "format": {
+      "type": "csv",
+
+      "parse": {
+        "Year_Start": "number",
+        "Total_Trips_Million": "number",
+        "Change_From_Previous_Year_Million": "number"
+      }
+    }
+  },
+
+  "transform": [
+
+    {
+      "calculate":
+        "datum.Direction == 'Baseline' ? datum.Total_Trips_Million : datum.Change_From_Previous_Year_Million",
+      "as": "Change_Value"
+    },
+
+    {
+      "window": [
+        {
+          "op": "sum",
+          "field": "Change_Value",
+          "as": "Running_Total"
+        }
+      ],
+
+      "sort": [
+        {
+          "field": "Year_Start",
+          "order": "ascending"
+        }
+      ]
+    },
+
+    {
+      "calculate":
+        "datum.Running_Total - datum.Change_Value",
+      "as": "Previous_Total"
+    },
+
+    {
+      "calculate":
+        "datum.Direction == 'Baseline' ? 0 : (datum.Running_Total < datum.Previous_Total ? datum.Running_Total : datum.Previous_Total)",
+      "as": "Bar_Start"
+    },
+
+    {
+      "calculate":
+        "datum.Direction == 'Baseline' ? datum.Running_Total : (datum.Running_Total > datum.Previous_Total ? datum.Running_Total : datum.Previous_Total)",
+      "as": "Bar_End"
+    }
+
+  ],
+
+  "layer": [
+
+    {
+      "mark": {
+        "type": "bar",
+        "size": 52,
+        "cornerRadius": 2,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Financial_Year",
+          "type": "nominal",
+
+          "sort": {
+            "field": "Year_Start",
+            "order": "ascending"
+          },
+
+          "title": null,
+
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 11,
+            "labelPadding": 8
+          }
+        },
+
+        "y": {
+          "field": "Bar_Start",
+          "type": "quantitative",
+
+          "title": "Passenger trips (million)",
+
+          "scale": {
+            "zero": true
+          },
+
+          "axis": {
+            "grid": true,
+            "gridColor": "#E5E7EB",
+            "labelFontSize": 11,
+            "titleFontSize": 12
+          }
+        },
+
+        "y2": {
+          "field": "Bar_End"
+        },
+
+        "color": {
+          "field": "Direction",
+          "type": "nominal",
+
+          "title": "Year-on-year movement",
+
+          "scale": {
+            "domain": [
+              "Baseline",
+              "Decrease",
+              "Increase"
+            ],
+
+            "range": [
+              "#173F5F",
+              "#D99037",
+              "#2A9D8F"
+            ]
+          },
+
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+
+        "tooltip": [
+
+          {
+            "field": "Financial_Year",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+
+          {
+            "field": "Total_Trips_Million",
+            "type": "quantitative",
+            "title": "Total passenger trips (million)",
+            "format": ".1f"
+          },
+
+          {
+            "field": "Change_From_Previous_Year_Million",
+            "type": "quantitative",
+            "title": "Change from previous year (million)",
+            "format": "+.1f"
+          },
+
+          {
+            "field": "Direction",
+            "type": "nominal",
+            "title": "Movement"
+          }
+
+        ]
+      }
+    },
+
+
+    {
+      "mark": {
+        "type": "line",
+        "color": "#374151",
+        "strokeWidth": 1.5,
+        "opacity": 0.65
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Financial_Year",
+          "type": "nominal",
+
+          "sort": {
+            "field": "Year_Start",
+            "order": "ascending"
+          }
+        },
+
+        "y": {
+          "field": "Total_Trips_Million",
+          "type": "quantitative"
+        }
+      }
+    },
+
+
+    {
+      "mark": {
+        "type": "circle",
+        "size": 55,
+        "color": "#374151",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Financial_Year",
+          "type": "nominal",
+
+          "sort": {
+            "field": "Year_Start",
+            "order": "ascending"
+          }
+        },
+
+        "y": {
+          "field": "Total_Trips_Million",
+          "type": "quantitative"
+        }
+      }
+    },
+
+
+    {
+      "mark": {
+        "type": "text",
+        "dy": -12,
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#374151"
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Financial_Year",
+          "type": "nominal",
+
+          "sort": {
+            "field": "Year_Start",
+            "order": "ascending"
+          }
+        },
+
+        "y": {
+          "field": "Total_Trips_Million",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "Total_Trips_Million",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    }
+
+  ],
+
+  "config": {
+
+    "background": "white",
+
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "axis": {
+      "domain": false,
+      "tickColor": "#CBD5E1",
+      "labelColor": "#4B5563",
+      "titleColor": "#374151"
+    },
+
+    "legend": {
+      "labelColor": "#4B5563",
+      "titleColor": "#1F2933"
+    }
+
+  }
+}
