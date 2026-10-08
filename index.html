@@ -269,11 +269,10 @@
       <p class="section-intro">
         The COVID-19 pandemic created the largest disruption visible in
         Australia's recent public transport history. Patronage collapsed
-        rapidly before beginning a multi-year recovery.
+        rapidly before beginning a multi-year recovery, but that recovery
+        has not occurred equally across every capital.
       </p>
 
-
-      <!-- CHART 10 -->
 
       <div class="chart-block">
 
@@ -296,6 +295,56 @@
         </div>
 
       </div>
+
+
+      <div class="chart-block">
+
+        <p class="chart-label">RECOVERY BY CITY</p>
+
+        <h3>Not every capital has returned to its pre-COVID level</h3>
+
+        <p>
+          Each city's 2018–19 patronage is indexed to 100. Values above 100
+          indicate that 2024–25 patronage has exceeded the pre-COVID benchmark,
+          while values below 100 indicate that recovery remains incomplete.
+        </p>
+
+        <div id="chart11"></div>
+
+        <div class="takeaway">
+          <strong>Reading the chart:</strong>
+          The vertical benchmark at 100 represents full recovery to each city's
+          own 2018–19 patronage level.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONCLUSION -->
+
+    <section class="conclusion">
+
+      <p class="chart-label">CONCLUSION</p>
+
+      <h2>One country, eight different transport stories</h2>
+
+      <p>
+        Australia's public transport system cannot be understood through a
+        single national pattern. Sydney and Melbourne dominate total patronage,
+        but population-adjusted comparisons reveal a different hierarchy.
+        Transport mode also matters: some capitals rely heavily on rail, while
+        others remain overwhelmingly bus-oriented.
+      </p>
+
+      <p>
+        Across almost five decades, patronage generally expanded before the
+        COVID-19 pandemic created an unprecedented break in the trend.
+        The recovery since then has been substantial, but uneven — showing that
+        Australia's capital-city transport systems continue to follow distinct
+        trajectories.
+      </p>
 
     </section>
 
@@ -341,6 +390,10 @@
     }).catch(console.error);
 
     vegaEmbed("#chart10", "js/chart10_covid_waterfall.vg.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#chart11", "js/chart11_recovery_bullet.vg.json", {
       actions: false
     }).catch(console.error);
 
