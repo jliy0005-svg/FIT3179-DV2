@@ -3,7 +3,6 @@
    FIT3179 DATA VISUALISATION 2
    ====================================== */
 
-
 * {
   box-sizing: border-box;
 }
@@ -221,7 +220,8 @@ section h2 {
 #chart6,
 #chart7,
 #chart8,
-#chart9 {
+#chart9,
+#chart10 {
   width: 100%;
 
   margin-top: 20px;
@@ -245,7 +245,7 @@ section h2 {
 }
 
 
-/* VEGA DROPDOWNS */
+/* VEGA CONTROLS */
 
 .vega-bindings {
   margin-top: 12px;
