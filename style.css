@@ -21,14 +21,14 @@ body {
 }
 
 
-/* MAIN PAGE */
+/* PAGE */
 
 main {
   width: min(1180px, calc(100% - 60px));
   margin: 0 auto;
 
   padding-top: 70px;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
 
 
@@ -46,10 +46,10 @@ h1 {
 }
 
 
-/* INTRO SUBTITLE */
+/* PAGE SUBTITLE */
 
-main > p {
-  max-width: 700px;
+.subtitle {
+  max-width: 760px;
 
   margin-top: 18px;
   margin-bottom: 70px;
@@ -60,7 +60,7 @@ main > p {
 }
 
 
-/* STORY SECTIONS */
+/* SECTION CARD */
 
 section {
   margin-top: 40px;
@@ -78,7 +78,7 @@ section {
 
 section h2 {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 
   padding-bottom: 15px;
 
@@ -90,9 +90,20 @@ section h2 {
 }
 
 
-/* CHART HEADING */
+/* EACH CHART + TEXT BLOCK */
 
-section h3 {
+.chart-block {
+  margin-bottom: 65px;
+}
+
+.chart-block:last-child {
+  margin-bottom: 10px;
+}
+
+
+/* CHART TITLES */
+
+.chart-block h3 {
   margin-top: 0;
   margin-bottom: 8px;
 
@@ -104,9 +115,10 @@ section h3 {
 
 /* CHART DESCRIPTION */
 
-section p {
-  max-width: 720px;
+.chart-block p {
+  max-width: 760px;
 
+  margin-top: 0;
   margin-bottom: 25px;
 
   color: #63707c;
@@ -115,21 +127,28 @@ section p {
 }
 
 
-/* VEGA VISUALISATION */
+/* ALL VEGA CHARTS */
 
-#chart1 {
+#chart1,
+#chart2,
+#chart3,
+#chart4 {
   width: 100%;
 
-  margin-top: 25px;
+  margin-top: 20px;
 
   overflow-x: auto;
 }
 
 
-/* VEGA EMBED */
+/* VEGA EMBEDS */
 
 .vega-embed {
   width: 100%;
+}
+
+.vega-embed > div {
+  max-width: 100%;
 }
 
 
@@ -148,6 +167,14 @@ section p {
 
   section {
     padding: 22px;
+  }
+
+  section h2 {
+    font-size: 23px;
+  }
+
+  .chart-block h3 {
+    font-size: 19px;
   }
 
 }
