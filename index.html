@@ -39,9 +39,7 @@
     </header>
 
 
-    <!-- ============================ -->
     <!-- SECTION 1 -->
-    <!-- ============================ -->
 
     <section>
 
@@ -126,9 +124,7 @@
     </section>
 
 
-    <!-- ============================ -->
     <!-- SECTION 2 -->
-    <!-- ============================ -->
 
     <section>
 
@@ -202,9 +198,7 @@
     </section>
 
 
-    <!-- ============================ -->
     <!-- SECTION 3 -->
-    <!-- ============================ -->
 
     <section>
 
@@ -257,8 +251,48 @@
 
         <div class="takeaway">
           <strong>How to explore:</strong>
-          Select a capital from the dropdown to highlight its ranking
-          trajectory while the other cities remain visible for context.
+          Select a capital from the dropdown to highlight its ranking trajectory
+          while the other cities remain visible for context.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECTION 4 -->
+
+    <section>
+
+      <h2>04 — THE COVID SHOCK AND RECOVERY</h2>
+
+      <p class="section-intro">
+        The COVID-19 pandemic created the largest disruption visible in
+        Australia's recent public transport history. Patronage collapsed
+        rapidly before beginning a multi-year recovery.
+      </p>
+
+
+      <!-- CHART 10 -->
+
+      <div class="chart-block">
+
+        <p class="chart-label">NATIONAL SHOCK</p>
+
+        <h3>The collapse — and the climb back</h3>
+
+        <p>
+          This waterfall separates the national change in capital-city
+          patronage into annual losses and gains. Orange bars indicate
+          year-on-year declines, while teal bars indicate recovery.
+        </p>
+
+        <div id="chart10"></div>
+
+        <div class="takeaway">
+          <strong>Key takeaway:</strong>
+          The pandemic produced an unusually sharp patronage loss, followed
+          by several consecutive years of recovery.
         </div>
 
       </div>
@@ -303,6 +337,10 @@
     }).catch(console.error);
 
     vegaEmbed("#chart9", "js/chart9_city_rankings.vg.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#chart10", "js/chart10_covid_waterfall.vg.json", {
       actions: false
     }).catch(console.error);
 
