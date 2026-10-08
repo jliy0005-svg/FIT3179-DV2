@@ -39,9 +39,9 @@
     </header>
 
 
-    <!-- ================================= -->
+    <!-- ============================ -->
     <!-- SECTION 1 -->
-    <!-- ================================= -->
+    <!-- ============================ -->
 
     <section>
 
@@ -54,8 +54,6 @@
         intensively residents use public transport.
       </p>
 
-
-      <!-- CHART 1 -->
 
       <div class="chart-block">
 
@@ -72,8 +70,6 @@
 
       </div>
 
-
-      <!-- CHART 2 -->
 
       <div class="chart-block">
 
@@ -92,8 +88,6 @@
       </div>
 
 
-      <!-- CHART 3 -->
-
       <div class="chart-block">
 
         <p class="chart-label">PER RESIDENT</p>
@@ -111,8 +105,6 @@
 
       </div>
 
-
-      <!-- CHART 4 -->
 
       <div class="chart-block">
 
@@ -134,9 +126,9 @@
     </section>
 
 
-    <!-- ================================= -->
+    <!-- ============================ -->
     <!-- SECTION 2 -->
-    <!-- ================================= -->
+    <!-- ============================ -->
 
     <section>
 
@@ -148,8 +140,6 @@
         on buses, trams, light rail or ferries.
       </p>
 
-
-      <!-- CHART 5 -->
 
       <div class="chart-block">
 
@@ -168,8 +158,6 @@
       </div>
 
 
-      <!-- CHART 6 -->
-
       <div class="chart-block">
 
         <p class="chart-label">TRANSPORT MIX</p>
@@ -187,8 +175,6 @@
 
       </div>
 
-
-      <!-- CHART 7 -->
 
       <div class="chart-block">
 
@@ -216,9 +202,9 @@
     </section>
 
 
-    <!-- ================================= -->
+    <!-- ============================ -->
     <!-- SECTION 3 -->
-    <!-- ================================= -->
+    <!-- ============================ -->
 
     <section>
 
@@ -230,8 +216,6 @@
         most dramatically, the COVID-19 disruption.
       </p>
 
-
-      <!-- CHART 8 -->
 
       <div class="chart-block">
 
@@ -255,6 +239,30 @@
 
       </div>
 
+
+      <div class="chart-block">
+
+        <p class="chart-label">CHANGING RANKS</p>
+
+        <h3>Which capitals moved up — and which fell behind?</h3>
+
+        <p>
+          Absolute patronage tells only part of the long-term story.
+          This ranking view tracks each capital's position relative to the
+          other cities over time. Rank #1 represents the largest public
+          transport market in that financial year.
+        </p>
+
+        <div id="chart9"></div>
+
+        <div class="takeaway">
+          <strong>How to explore:</strong>
+          Select a capital from the dropdown to highlight its ranking
+          trajectory while the other cities remain visible for context.
+        </div>
+
+      </div>
+
     </section>
 
   </main>
@@ -262,60 +270,41 @@
 
   <script>
 
-    vegaEmbed(
-      "#chart1",
-      "js/chart1_map_patronage.vg.json",
-      { actions: false }
-    ).catch(console.error);
+    vegaEmbed("#chart1", "js/chart1_map_patronage.vg.json", {
+      actions: false
+    }).catch(console.error);
 
+    vegaEmbed("#chart2", "js/chart2_ranked_bar.vg.json", {
+      actions: false
+    }).catch(console.error);
 
-    vegaEmbed(
-      "#chart2",
-      "js/chart2_ranked_bar.vg.json",
-      { actions: false }
-    ).catch(console.error);
+    vegaEmbed("#chart3", "js/chart3_tile_map.vg.json", {
+      actions: false
+    }).catch(console.error);
 
+    vegaEmbed("#chart4", "js/chart4_lollipop_per_resident.vg.json", {
+      actions: false
+    }).catch(console.error);
 
-    vegaEmbed(
-      "#chart3",
-      "js/chart3_tile_map.vg.json",
-      { actions: false }
-    ).catch(console.error);
+    vegaEmbed("#chart5", "js/chart5_dominant_mode_map.vg.json", {
+      actions: false
+    }).catch(console.error);
 
+    vegaEmbed("#chart6", "js/chart6_mode_heatmap.vg.json", {
+      actions: false
+    }).catch(console.error);
 
-    vegaEmbed(
-      "#chart4",
-      "js/chart4_lollipop_per_resident.vg.json",
-      { actions: false }
-    ).catch(console.error);
+    vegaEmbed("#chart7", "js/chart7_mode_waffle.vg.json", {
+      actions: false
+    }).catch(console.error);
 
+    vegaEmbed("#chart8", "js/chart8_timeline_overview.vg.json", {
+      actions: false
+    }).catch(console.error);
 
-    vegaEmbed(
-      "#chart5",
-      "js/chart5_dominant_mode_map.vg.json",
-      { actions: false }
-    ).catch(console.error);
-
-
-    vegaEmbed(
-      "#chart6",
-      "js/chart6_mode_heatmap.vg.json",
-      { actions: false }
-    ).catch(console.error);
-
-
-    vegaEmbed(
-      "#chart7",
-      "js/chart7_mode_waffle.vg.json",
-      { actions: false }
-    ).catch(console.error);
-
-
-    vegaEmbed(
-      "#chart8",
-      "js/chart8_timeline_overview.vg.json",
-      { actions: false }
-    ).catch(console.error);
+    vegaEmbed("#chart9", "js/chart9_city_rankings.vg.json", {
+      actions: false
+    }).catch(console.error);
 
   </script>
 
