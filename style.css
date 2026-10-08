@@ -78,7 +78,7 @@ section {
 
 section h2 {
   margin-top: 0;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 
   padding-bottom: 15px;
 
@@ -90,7 +90,21 @@ section h2 {
 }
 
 
-/* EACH CHART + TEXT BLOCK */
+/* SECTION INTRO */
+
+.section-intro {
+  max-width: 760px;
+
+  margin-top: 0;
+  margin-bottom: 45px;
+
+  color: #63707c;
+
+  font-size: 15px;
+}
+
+
+/* CHART BLOCK */
 
 .chart-block {
   margin-bottom: 65px;
@@ -101,7 +115,7 @@ section h2 {
 }
 
 
-/* CHART TITLES */
+/* CHART TITLE */
 
 .chart-block h3 {
   margin-top: 0;
@@ -127,12 +141,13 @@ section h2 {
 }
 
 
-/* ALL VEGA CHARTS */
+/* VEGA CHARTS */
 
 #chart1,
 #chart2,
 #chart3,
-#chart4 {
+#chart4,
+#chart5 {
   width: 100%;
 
   margin-top: 20px;
@@ -140,8 +155,6 @@ section h2 {
   overflow-x: auto;
 }
 
-
-/* VEGA EMBEDS */
 
 .vega-embed {
   width: 100%;
