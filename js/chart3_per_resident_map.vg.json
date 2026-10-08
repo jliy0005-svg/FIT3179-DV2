@@ -9,6 +9,7 @@
   },
 
   "layer": [
+
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
@@ -34,10 +35,9 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/gccsa_capitals_chart3.geojson",
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_regions.json",
         "format": {
-          "type": "json",
-          "property": "features"
+          "type": "json"
         }
       },
 
@@ -48,13 +48,14 @@
       },
 
       "encoding": {
+
         "shape": {
           "field": "geometry",
           "type": "geojson"
         },
 
         "color": {
-          "field": "properties.Trips_Per_Resident_2024_25",
+          "field": "Trips_Per_Resident_2024_25",
           "type": "quantitative",
           "title": "Trips per resident",
 
@@ -74,33 +75,33 @@
 
         "tooltip": [
           {
-            "field": "properties.City",
+            "field": "City",
             "type": "nominal",
             "title": "Capital city"
           },
 
           {
-            "field": "properties.gccsa_name_2021",
+            "field": "Capital_Region",
             "type": "nominal",
             "title": "Capital region"
           },
 
           {
-            "field": "properties.Trips_Per_Resident_2024_25",
+            "field": "Trips_Per_Resident_2024_25",
             "type": "quantitative",
             "title": "Trips per resident",
             "format": ".1f"
           },
 
           {
-            "field": "properties.Total_Trips_Million_2024_25",
+            "field": "Total_Trips_Million_2024_25",
             "type": "quantitative",
             "title": "Passenger trips (million)",
             "format": ".1f"
           },
 
           {
-            "field": "properties.Population_2025",
+            "field": "Population_2025",
             "type": "quantitative",
             "title": "Population",
             "format": ",.0f"
@@ -108,6 +109,7 @@
         ]
       }
     }
+
   ],
 
   "config": {
