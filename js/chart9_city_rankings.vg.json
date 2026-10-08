@@ -1,0 +1,346 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 700,
+  "height": 420,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_rankings.csv",
+
+    "format": {
+      "type": "csv",
+
+      "parse": {
+        "Year_Start": "number",
+        "Total_Trips_Million": "number",
+        "Patronage_Rank": "number"
+      }
+    }
+  },
+
+  "params": [
+    {
+      "name": "SelectedCity",
+
+      "value": "Sydney",
+
+      "bind": {
+        "input": "select",
+
+        "options": [
+          "Sydney",
+          "Melbourne",
+          "Brisbane",
+          "Perth",
+          "Adelaide",
+          "Canberra",
+          "Hobart",
+          "Darwin"
+        ],
+
+        "name": "Highlight a capital: "
+      }
+    }
+  ],
+
+  "layer": [
+
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2,
+        "color": "#C4CCD2",
+        "opacity": 0.75
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Year_Start",
+          "type": "quantitative",
+
+          "title": "Financial year beginning",
+
+          "scale": {
+            "domain": [
+              1976,
+              2024
+            ]
+          },
+
+          "axis": {
+            "format": "d",
+
+            "values": [
+              1976,
+              1980,
+              1985,
+              1990,
+              1995,
+              2000,
+              2005,
+              2010,
+              2015,
+              2020,
+              2024
+            ],
+
+            "labelFontSize": 11,
+            "labelAngle": 0,
+            "titleFontSize": 12
+          }
+        },
+
+        "y": {
+          "field": "Patronage_Rank",
+          "type": "quantitative",
+
+          "title": "Patronage rank",
+
+          "scale": {
+            "domain": [
+              8.5,
+              0.5
+            ]
+          },
+
+          "axis": {
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+
+            "labelExpr": "'#' + datum.value",
+
+            "grid": true,
+            "gridColor": "#E5E7EB",
+
+            "labelFontSize": 11,
+            "titleFontSize": 12
+          }
+        },
+
+        "detail": {
+          "field": "City",
+          "type": "nominal"
+        }
+      }
+    },
+
+
+    {
+      "transform": [
+        {
+          "filter": "datum.City == SelectedCity"
+        }
+      ],
+
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "color": "#173F5F"
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Year_Start",
+          "type": "quantitative"
+        },
+
+        "y": {
+          "field": "Patronage_Rank",
+          "type": "quantitative"
+        },
+
+        "detail": {
+          "field": "City",
+          "type": "nominal"
+        }
+      }
+    },
+
+
+    {
+      "mark": {
+        "type": "circle",
+        "size": 100,
+        "opacity": 0
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Year_Start",
+          "type": "quantitative"
+        },
+
+        "y": {
+          "field": "Patronage_Rank",
+          "type": "quantitative"
+        },
+
+        "tooltip": [
+
+          {
+            "field": "City",
+            "type": "nominal",
+            "title": "Capital city"
+          },
+
+          {
+            "field": "Financial_Year",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+
+          {
+            "field": "Patronage_Rank",
+            "type": "quantitative",
+            "title": "Rank",
+            "format": ".0f"
+          },
+
+          {
+            "field": "Total_Trips_Million",
+            "type": "quantitative",
+            "title": "Passenger trips (million)",
+            "format": ".1f"
+          }
+
+        ]
+      }
+    },
+
+
+    {
+      "transform": [
+        {
+          "filter": "datum.Year_Start == 2024"
+        }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "size": 75,
+        "color": "#9AA6AF",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Year_Start",
+          "type": "quantitative"
+        },
+
+        "y": {
+          "field": "Patronage_Rank",
+          "type": "quantitative"
+        }
+      }
+    },
+
+
+    {
+      "transform": [
+        {
+          "filter": "datum.Year_Start == 2024 && datum.City == SelectedCity"
+        }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "size": 130,
+        "color": "#173F5F",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Year_Start",
+          "type": "quantitative"
+        },
+
+        "y": {
+          "field": "Patronage_Rank",
+          "type": "quantitative"
+        }
+      }
+    },
+
+
+    {
+      "transform": [
+        {
+          "filter": "datum.Year_Start == 2024"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Year_Start",
+          "type": "quantitative"
+        },
+
+        "y": {
+          "field": "Patronage_Rank",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "City",
+          "type": "nominal"
+        },
+
+        "color": {
+          "condition": {
+            "test": "datum.City == SelectedCity",
+            "value": "#173F5F"
+          },
+
+          "value": "#6B7280"
+        }
+      }
+    }
+
+  ],
+
+  "config": {
+
+    "background": "white",
+
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial",
+
+    "axis": {
+      "domain": false,
+      "tickColor": "#CBD5E1",
+      "labelColor": "#4B5563",
+      "titleColor": "#374151"
+    }
+
+  }
+}
