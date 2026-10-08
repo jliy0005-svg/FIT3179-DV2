@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,9 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
@@ -23,7 +20,7 @@
 
     <h1>HOW AUSTRALIA MOVES</h1>
 
-    <p>
+    <p class="subtitle">
       Five decades of public transport across Australia's capital cities
     </p>
 
@@ -35,40 +32,69 @@
 
       <!-- CHART 1 -->
 
-      <h3>Australia's biggest public transport markets</h3>
+      <div class="chart-block">
 
-      <p>
-        Circle size represents total public transport passenger trips
-        across Australia's capital cities in 2024–25.
-      </p>
+        <h3>Australia's biggest public transport markets</h3>
 
-      <div id="chart1"></div>
+        <p>
+          Circle size represents total public transport passenger trips
+          across Australia's capital cities in 2024–25.
+        </p>
+
+        <div id="chart1"></div>
+
+      </div>
 
 
       <!-- CHART 2 -->
 
-      <h3>Which capitals carry the most passengers?</h3>
+      <div class="chart-block">
 
-      <p>
-        Ranking the same 2024–25 patronage figures makes the gap between
-        Australia's largest and smaller public transport markets easier to compare.
-      </p>
+        <h3>Which capitals carry the most passengers?</h3>
 
-      <div id="chart2"></div>
+        <p>
+          Ranking the same 2024–25 patronage figures makes the gap between
+          Australia's largest and smaller public transport markets easier to compare.
+        </p>
+
+        <div id="chart2"></div>
+
+      </div>
 
 
       <!-- CHART 3 -->
 
-      <h3>Does city size change the picture?</h3>
+      <div class="chart-block">
 
-      <p>
-        Total patronage partly reflects population size. This tile-grid map
-        instead compares public transport trips per resident, giving each capital
-        equal visual space while approximately preserving its geographic position.
-        Darker tiles indicate more trips per resident in 2024–25.
-      </p>
+        <h3>Does city size change the picture?</h3>
 
-      <div id="chart3"></div>
+        <p>
+          Total patronage partly reflects population size. This tile-grid map
+          instead compares public transport trips per resident, giving each capital
+          equal visual space while approximately preserving its geographic position.
+          Darker tiles indicate more trips per resident in 2024–25.
+        </p>
+
+        <div id="chart3"></div>
+
+      </div>
+
+
+      <!-- CHART 4 -->
+
+      <div class="chart-block">
+
+        <h3>Which capitals use public transport most intensively?</h3>
+
+        <p>
+          Comparing trips per resident reduces the effect of population size.
+          This ranking makes the differences between capitals easier to compare,
+          while the dashed reference line shows the average across all eight cities.
+        </p>
+
+        <div id="chart4"></div>
+
+      </div>
 
 
     </section>
@@ -99,6 +125,15 @@
     vegaEmbed(
       "#chart3",
       "js/chart3_tile_map.vg.json",
+      {
+        actions: false
+      }
+    ).catch(console.error);
+
+
+    vegaEmbed(
+      "#chart4",
+      "js/chart4_lollipop_per_resident.vg.json",
       {
         actions: false
       }
