@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
   <main>
@@ -25,11 +24,9 @@
       Five decades of public transport across Australia's capital cities
     </p>
 
-
     <section>
 
       <h2>01 — WHERE AUSTRALIA MOVES</h2>
-
 
       <h3>Australia's biggest public transport markets</h3>
 
@@ -50,6 +47,17 @@
 
       <div id="chart2"></div>
 
+
+      <h3>Does city size change the picture?</h3>
+
+      <p>
+        This choropleth compares public transport trips per resident rather than
+        total patronage. Darker capital-city regions indicate higher public
+        transport use relative to population in 2024–25.
+      </p>
+
+      <div id="chart3"></div>
+
     </section>
 
   </main>
@@ -69,6 +77,15 @@
     vegaEmbed(
       "#chart2",
       "js/chart2_ranked_bar.vg.json",
+      {
+        actions: false
+      }
+    ).catch(console.error);
+
+
+    vegaEmbed(
+      "#chart3",
+      "js/chart3_per_resident_map.vg.json",
       {
         actions: false
       }
