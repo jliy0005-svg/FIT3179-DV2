@@ -221,7 +221,8 @@ section h2 {
 #chart7,
 #chart8,
 #chart9,
-#chart10 {
+#chart10,
+#chart11 {
   width: 100%;
 
   margin-top: 20px;
@@ -267,6 +268,40 @@ section h2 {
   border-radius: 4px;
 
   color: #374151;
+}
+
+
+/* CONCLUSION */
+
+.conclusion {
+  background-color: #173f5f;
+
+  border: none;
+
+  color: white;
+}
+
+
+.conclusion .chart-label {
+  color: #BFD1DD;
+}
+
+
+.conclusion h2 {
+  color: white;
+
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+
+.conclusion p:not(.chart-label) {
+  max-width: 800px;
+
+  color: #E5EDF2;
+
+  font-size: 15px;
+
+  line-height: 1.8;
 }
 
 
