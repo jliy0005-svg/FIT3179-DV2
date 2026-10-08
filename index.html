@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>How Australia Moves</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+  <main>
+
+    <h1>HOW AUSTRALIA MOVES</h1>
+
+    <p>
+      Five decades of public transport across Australia's capital cities
+    </p>
+
+
+    <section>
+
+      <h2>01 — WHERE AUSTRALIA MOVES</h2>
+
+      <h3>Australia's biggest public transport markets</h3>
+
+      <p>
+        Circle size represents total public transport passenger trips
+        across Australia's capital cities in 2024–25.
+      </p>
+
+      <div id="chart1"></div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    vegaEmbed(
+      "#chart1",
+      "js/chart1_map_patronage.vg.json",
+      {
+        actions: false
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
