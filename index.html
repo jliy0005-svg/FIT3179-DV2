@@ -14,25 +14,53 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
   <main>
 
-    <h1>HOW AUSTRALIA MOVES</h1>
+    <header class="hero">
 
-    <p class="subtitle">
-      Five decades of public transport across Australia's capital cities
-    </p>
+      <p class="eyebrow">FIT3179 DATA VISUALISATION 2</p>
+
+      <h1>HOW AUSTRALIA MOVES</h1>
+
+      <p class="subtitle">
+        Five decades of public transport across Australia's capital cities
+      </p>
+
+      <p class="intro">
+        Australia's capital cities do not move in the same way.
+        This visualisation compares where public transport use is highest,
+        how usage changes after population is considered, and how trains,
+        trams, buses and ferries shape each city's transport system.
+      </p>
+
+    </header>
 
 
+
+    <!-- ===================== -->
     <!-- SECTION 1 -->
+    <!-- ===================== -->
 
     <section>
 
       <h2>01 — WHERE AUSTRALIA MOVES</h2>
 
+      <p class="section-intro">
+        Public transport patronage varies substantially between Australia's
+        capital cities. Raw totals reveal the largest markets, while
+        population-adjusted measures provide a different perspective on how
+        intensively residents use public transport.
+      </p>
+
+
+      <!-- CHART 1 -->
 
       <div class="chart-block">
+
+        <p class="chart-label">TOTAL PATRONAGE</p>
 
         <h3>Australia's biggest public transport markets</h3>
 
@@ -46,13 +74,18 @@
       </div>
 
 
+      <!-- CHART 2 -->
+
       <div class="chart-block">
+
+        <p class="chart-label">CITY RANKING</p>
 
         <h3>Which capitals carry the most passengers?</h3>
 
         <p>
           Ranking the same 2024–25 patronage figures makes the gap between
-          Australia's largest and smaller public transport markets easier to compare.
+          Australia's largest and smaller public transport markets easier
+          to compare precisely.
         </p>
 
         <div id="chart2"></div>
@@ -60,14 +93,18 @@
       </div>
 
 
+      <!-- CHART 3 -->
+
       <div class="chart-block">
+
+        <p class="chart-label">PER RESIDENT</p>
 
         <h3>Does city size change the picture?</h3>
 
         <p>
           Total patronage partly reflects population size. This tile-grid map
-          instead compares public transport trips per resident, giving each capital
-          equal visual space while approximately preserving its geographic position.
+          compares public transport trips per resident, giving each capital
+          equal visual space while approximately preserving geographic position.
           Darker tiles indicate more trips per resident in 2024–25.
         </p>
 
@@ -76,14 +113,19 @@
       </div>
 
 
+      <!-- CHART 4 -->
+
       <div class="chart-block">
+
+        <p class="chart-label">PER-RESIDENT RANKING</p>
 
         <h3>Which capitals use public transport most intensively?</h3>
 
         <p>
-          Comparing trips per resident reduces the effect of population size.
-          This ranking makes the differences between capitals easier to compare,
-          while the dashed reference line shows the average across all eight cities.
+          Comparing trips per resident reduces the influence of population size.
+          The lollipop ranking makes the differences between capitals easier
+          to compare, while the dashed reference line shows the average across
+          all eight cities.
         </p>
 
         <div id="chart4"></div>
@@ -94,7 +136,9 @@
 
 
 
+    <!-- ===================== -->
     <!-- SECTION 2 -->
+    <!-- ===================== -->
 
     <section>
 
@@ -102,11 +146,16 @@
 
       <p class="section-intro">
         Public transport systems are not structured the same way across Australia.
-        Different cities depend on different modes to move their passengers.
+        Some cities depend heavily on trains, while others rely much more strongly
+        on buses, trams or other modes.
       </p>
 
 
+      <!-- CHART 5 -->
+
       <div class="chart-block">
+
+        <p class="chart-label">DOMINANT MODE</p>
 
         <h3>Which transport mode dominates each capital?</h3>
 
@@ -120,10 +169,30 @@
 
       </div>
 
+
+      <!-- CHART 6 -->
+
+      <div class="chart-block">
+
+        <p class="chart-label">TRANSPORT MIX</p>
+
+        <h3>Every city has a different transport mix</h3>
+
+        <p>
+          Dominant mode tells only part of the story. This heatmap compares
+          the percentage of each city's public transport patronage carried
+          by trains, trams and light rail, buses and ferries. Darker cells
+          indicate a larger share of that city's total trips.
+        </p>
+
+        <div id="chart6"></div>
+
+      </div>
+
     </section>
 
-
   </main>
+
 
 
   <script>
@@ -162,7 +231,15 @@
       { actions: false }
     ).catch(console.error);
 
+
+    vegaEmbed(
+      "#chart6",
+      "js/chart6_mode_heatmap.vg.json",
+      { actions: false }
+    ).catch(console.error);
+
   </script>
+
 
 </body>
 
