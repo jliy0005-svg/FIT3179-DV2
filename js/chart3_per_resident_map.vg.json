@@ -9,7 +9,7 @@
   },
 
   "data": {
-    "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/GCCSA/MapServer/1/query?where=1%3D1&outFields=gccsa_name_2021%2Cgccsa_code_2021&returnGeometry=true&outSR=4326&f=geojson",
+    "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/GCCSA/MapServer/0/query?where=1%3D1&outFields=gccsa_name_2021%2Cgccsa_code_2021&returnGeometry=true&outSR=4326&f=geojson",
     "format": {
       "type": "json",
       "property": "features"
@@ -29,13 +29,18 @@
 
     {
       "transform": [
+
         {
           "lookup": "properties.gccsa_name_2021",
+
           "from": {
+
             "data": {
               "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/refs/heads/main/data/city_summary_choropleth_ready.csv",
+
               "format": {
                 "type": "csv",
+
                 "parse": {
                   "Trips_Per_Resident_2024_25": "number",
                   "Total_Trips_Million_2024_25": "number",
@@ -43,7 +48,9 @@
                 }
               }
             },
+
             "key": "GCCSA_Name",
+
             "fields": [
               "City",
               "Trips_Per_Resident_2024_25",
@@ -56,12 +63,13 @@
         {
           "filter": "isValid(datum.Trips_Per_Resident_2024_25)"
         }
+
       ],
 
       "mark": {
         "type": "geoshape",
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.9
+        "strokeWidth": 1
       },
 
       "encoding": {
@@ -69,11 +77,14 @@
         "color": {
           "field": "Trips_Per_Resident_2024_25",
           "type": "quantitative",
+
           "title": "Trips per resident",
+
           "scale": {
             "scheme": "blues",
             "domain": [0, 130]
           },
+
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
@@ -84,32 +95,38 @@
         },
 
         "tooltip": [
+
           {
             "field": "City",
             "type": "nominal",
             "title": "Capital city"
           },
+
           {
             "field": "Trips_Per_Resident_2024_25",
             "type": "quantitative",
             "title": "Trips per resident",
             "format": ".1f"
           },
+
           {
             "field": "Total_Trips_Million_2024_25",
             "type": "quantitative",
             "title": "Passenger trips (million)",
             "format": ".1f"
           },
+
           {
             "field": "Population_2025",
             "type": "quantitative",
             "title": "Population",
             "format": ",.0f"
           }
+
         ]
       }
     }
+
   ],
 
   "config": {
@@ -126,5 +143,6 @@
       "labelColor": "#4B5563",
       "titleColor": "#1F2933"
     }
+
   }
 }
