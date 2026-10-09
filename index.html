@@ -97,6 +97,7 @@
       </div>
 
 
+
       <!-- CHART 2 -->
 
       <div class="chart-block">
@@ -118,6 +119,7 @@
         <div id="chart2"></div>
 
       </div>
+
 
 
       <!-- CHART 3 -->
@@ -152,6 +154,7 @@
         </div>
 
       </div>
+
 
 
       <!-- CHART 4 -->
@@ -231,6 +234,7 @@
       </div>
 
 
+
       <!-- CHART 6 -->
 
       <div class="chart-block">
@@ -253,6 +257,7 @@
         <div id="chart6"></div>
 
       </div>
+
 
 
       <!-- CHART 7 -->
@@ -339,6 +344,7 @@
       </div>
 
 
+
       <!-- CHART 9 -->
 
       <div class="chart-block">
@@ -423,6 +429,7 @@
         </div>
 
       </div>
+
 
 
       <!-- CHART 11 -->
@@ -512,6 +519,8 @@
       <div class="metadata-grid">
 
 
+        <!-- AUTHOR -->
+
         <div class="metadata-card">
 
           <h3>
@@ -519,13 +528,15 @@
           </h3>
 
           <p>
-            <strong>JONATHAN LI YOUN FONG</strong><br>
+            <strong>Jonathan Li Youn Fong</strong><br>
             FIT3179 Data Visualisation 2<br>
             October 2026
           </p>
 
         </div>
 
+
+        <!-- DATA COVERAGE -->
 
         <div class="metadata-card">
 
@@ -542,6 +553,8 @@
         </div>
 
 
+        <!-- BITRE -->
+
         <div class="metadata-card">
 
           <h3>
@@ -550,16 +563,17 @@
 
           <p>
             Bureau of Infrastructure and Transport Research Economics,
-            <em>Australian Infrastructure and Transport Statistics —
-            Yearbook 2025, Chapter 2: Passengers</em>.
+            <em>
+              Australian Infrastructure and Transport Statistics —
+              Yearbook 2025, Chapter 2: Passengers
+            </em>.
           </p>
 
           <p class="source-note">
-            Used for public transport patronage by capital city, transport
-            mode and financial year.
+            Used for public transport patronage by capital city,
+            transport mode and financial year.
           </p>
 
-          <!-- Replace BITRE_SOURCE_URL with the BITRE link supplied below -->
           <a
             href="https://www.bitre.gov.au/publications/2025/australian-infrastructure-and-transport-statistics-yearbook-2025/passengers"
             target="_blank"
@@ -570,6 +584,8 @@
 
         </div>
 
+
+        <!-- ABS -->
 
         <div class="metadata-card">
 
@@ -583,11 +599,10 @@
           </p>
 
           <p class="source-note">
-            Used for Estimated Resident Population at 30 June 2025 for
-            Greater Capital City Statistical Areas.
+            Used for Estimated Resident Population at 30 June 2025
+            for Greater Capital City Statistical Areas.
           </p>
 
-          <!-- Replace ABS_SOURCE_URL with the ABS link supplied below -->
           <a
             href="https://www.abs.gov.au/statistics/people/population/regional-population/latest-release"
             target="_blank"
@@ -598,8 +613,42 @@
 
         </div>
 
+
+        <!-- VEGA GEOGRAPHIC SOURCE -->
+
+        <div class="metadata-card">
+
+          <h3>
+            Source 3 — Geographic base map
+          </h3>
+
+          <p>
+            Vega Datasets,
+            <em>world-110m geographic dataset</em>.
+          </p>
+
+          <p class="source-note">
+            Used as the geographic base layer for the Australia maps.
+            Statistical values displayed on the maps come from BITRE
+            and ABS data.
+          </p>
+
+          <a
+            href="https://github.com/vega/vega-datasets"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Vega Datasets source
+          </a>
+
+        </div>
+
+
       </div>
 
+
+
+      <!-- DERIVED MEASURES -->
 
       <div class="methodology">
 
@@ -621,20 +670,22 @@
         </p>
 
         <p>
-          <strong>Recovery index</strong> compares 2024–25 patronage with
-          2018–19 patronage, where 100 represents a return to the city's
-          pre-COVID level.
+          <strong>Bus trips per resident</strong> combines BITRE bus-patronage
+          totals with ABS population estimates. In the dot map, each dot
+          represents approximately five annual bus trips per resident.
         </p>
 
         <p>
-          <strong>Chart 3 dot map:</strong> each dot represents approximately
-          five annual bus trips per resident. Dots are positioned schematically
-          around capital-city coordinates and do not indicate actual passenger
-          origins, destinations, routes or stops.
+          <strong>Recovery index</strong> compares 2024–25 patronage with
+          2018–19 patronage, where 100 represents a return to the city's
+          pre-COVID patronage level.
         </p>
 
       </div>
 
+
+
+      <!-- DATA NOTES -->
 
       <div class="data-note">
 
@@ -644,9 +695,9 @@
 
         <p>
           Source missing-value and not-applicable categories were retained
-          during data preparation rather than automatically treating them as
-          zero. Values shown as unavailable therefore should not be interpreted
-          as zero patronage.
+          during data preparation rather than automatically treating them
+          as zero. Values shown as unavailable therefore should not be
+          interpreted as zero patronage.
         </p>
 
         <p>
@@ -655,10 +706,17 @@
           Statistics.
         </p>
 
-      </div>
+        <p>
+          Dot locations in Chart 3 are schematic clusters around capital-city
+          coordinates. They do not represent exact passenger origins,
+          destinations, bus stops or routes.
+        </p>
 
       </div>
 
+
+
+      <!-- TECHNICAL IMPLEMENTATION -->
 
       <div class="technical-note">
 
@@ -668,11 +726,39 @@
 
         <p>
           Visualisations were created using Vega-Lite and embedded in a
-          single-page HTML/CSS website hosted with GitHub Pages. Geographic
-          base layers use the Vega Datasets world map.
+          single-page HTML and CSS website hosted using GitHub Pages.
+          Interactive features include tooltips, dropdown filtering and
+          an overview-and-detail interval selection.
+        </p>
+
+        <p>
+          The three geographic visualisations use different map idioms:
+          a proportional symbol map, a dot plot map and a graduated
+          symbol map.
         </p>
 
       </div>
+
+
+
+      <!-- AI ACKNOWLEDGEMENT -->
+
+      <div class="ai-note">
+
+        <h3>
+          Generative AI acknowledgement
+        </h3>
+
+        <p>
+          Generative AI tools, including ChatGPT by OpenAI, were used
+          extensively to assist with data preparation, visualisation ideation,
+          Vega-Lite, HTML and CSS code drafting, debugging, explanatory wording
+          and refinement of the visualisation. The resulting outputs were
+          reviewed, tested, selected and modified by the author.
+        </p>
+
+      </div>
+
 
     </section>
 
