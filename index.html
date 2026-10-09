@@ -2,8 +2,13 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>How Australia Moves</title>
 
@@ -12,6 +17,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 
@@ -19,11 +25,20 @@
 
   <main>
 
+
+    <!-- ================================= -->
+    <!-- HERO -->
+    <!-- ================================= -->
+
     <header class="hero">
 
-      <p class="eyebrow">FIT3179 DATA VISUALISATION 2</p>
+      <p class="eyebrow">
+        FIT3179 DATA VISUALISATION 2
+      </p>
 
-      <h1>HOW AUSTRALIA MOVES</h1>
+      <h1>
+        HOW AUSTRALIA MOVES
+      </h1>
 
       <p class="subtitle">
         Five decades of public transport across Australia's capital cities
@@ -31,13 +46,14 @@
 
       <p class="intro">
         Australia's capital cities do not move in the same way.
-        This visualisation compares where public transport use is highest,
-        how usage changes after population is considered, how different modes
-        shape each city's transport system, and how patronage has changed
-        over time.
+        This visualisation explores where public transport use is concentrated,
+        how usage changes when population is considered, how cities differ
+        in their reliance on buses, trains, trams and ferries, and how almost
+        five decades of patronage were disrupted by COVID-19.
       </p>
 
     </header>
+
 
 
     <!-- ================================= -->
@@ -46,13 +62,14 @@
 
     <section>
 
-      <h2>01 — WHERE AUSTRALIA MOVES</h2>
+      <h2>
+        01 — WHERE AUSTRALIA MOVES
+      </h2>
 
       <p class="section-intro">
         Public transport patronage varies substantially between Australia's
-        capital cities. Raw totals reveal the largest markets, while
-        population-adjusted measures provide a different perspective on how
-        intensively residents use public transport.
+        capital cities. Raw totals reveal the largest markets, but population
+        and transport mode can change how those differences are understood.
       </p>
 
 
@@ -60,13 +77,19 @@
 
       <div class="chart-block">
 
-        <p class="chart-label">TOTAL PATRONAGE</p>
+        <p class="chart-label">
+          TOTAL PATRONAGE
+        </p>
 
-        <h3>Australia's biggest public transport markets</h3>
+        <h3>
+          Australia's biggest public transport markets
+        </h3>
 
         <p>
           Circle area represents total public transport passenger trips
-          across Australia's capital cities in 2024–25.
+          across Australia's capital cities in 2024–25. This proportional
+          symbol map shows the strong concentration of patronage in Australia's
+          largest urban transport markets.
         </p>
 
         <div id="chart1"></div>
@@ -74,18 +97,23 @@
       </div>
 
 
+
       <!-- CHART 2 -->
 
       <div class="chart-block">
 
-        <p class="chart-label">CITY RANKING</p>
+        <p class="chart-label">
+          CITY RANKING
+        </p>
 
-        <h3>Which capitals carry the most passengers?</h3>
+        <h3>
+          Which capitals carry the most passengers?
+        </h3>
 
         <p>
-          Ranking the same 2024–25 patronage figures makes the gap between
-          Australia's largest and smaller public transport markets easier
-          to compare precisely.
+          Ranking the same 2024–25 patronage figures makes the differences
+          between Australia's largest and smaller public transport markets
+          easier to compare precisely.
         </p>
 
         <div id="chart2"></div>
@@ -93,39 +121,58 @@
       </div>
 
 
+
       <!-- CHART 3 -->
 
       <div class="chart-block">
 
-        <p class="chart-label">PER RESIDENT</p>
+        <p class="chart-label">
+          BUS TRIPS PER RESIDENT
+        </p>
 
-        <h3>Does city size change the picture?</h3>
+        <h3>
+          Where is bus travel most intensive?
+        </h3>
 
         <p>
-          Total patronage partly reflects population size. This view compares
-          public transport trips per resident across the eight capitals.
-          Darker values indicate greater public transport use relative to
-          population in 2024–25.
+          Total bus patronage is strongly influenced by population size.
+          This dot map instead compares bus trips relative to each capital's
+          population. Each dot represents approximately five annual bus trips
+          per resident in 2024–25.
         </p>
 
         <div id="chart3"></div>
 
+        <div class="takeaway">
+
+          <strong>How to read the map:</strong>
+
+          More dots indicate more bus trips per resident. Dot positions are
+          schematic clusters around each capital and do not represent individual
+          passengers, bus stops, routes or exact trip locations.
+
+        </div>
+
       </div>
+
 
 
       <!-- CHART 4 -->
 
       <div class="chart-block">
 
-        <p class="chart-label">PER-RESIDENT RANKING</p>
+        <p class="chart-label">
+          OVERALL USE PER RESIDENT
+        </p>
 
-        <h3>Which capitals use public transport most intensively?</h3>
+        <h3>
+          Which capitals use public transport most intensively overall?
+        </h3>
 
         <p>
-          Comparing trips per resident reduces the influence of population size.
-          The lollipop ranking makes the differences between capitals easier
-          to compare, while the dashed reference line shows the average across
-          all eight cities.
+          Looking beyond buses, this ranking compares total public transport
+          trips per resident across all modes. The dashed reference line shows
+          the average across the eight capitals.
         </p>
 
         <div id="chart4"></div>
@@ -135,19 +182,22 @@
     </section>
 
 
+
     <!-- ================================= -->
     <!-- SECTION 2 -->
     <!-- ================================= -->
 
     <section>
 
-      <h2>02 — EVERY CITY MOVES DIFFERENTLY</h2>
+      <h2>
+        02 — EVERY CITY MOVES DIFFERENTLY
+      </h2>
 
       <p class="section-intro">
         Public transport systems are structured differently across Australia.
-        Some cities rely strongly on rail, while others depend much more heavily
-        on buses. Looking at mode dependence reveals another layer of difference
-        between the capitals.
+        Some cities combine rail, tram, bus and ferry networks, while others
+        rely overwhelmingly on one mode. These differences shape how each
+        capital moves.
       </p>
 
 
@@ -155,34 +205,47 @@
 
       <div class="chart-block">
 
-        <p class="chart-label">BUS DEPENDENCE</p>
+        <p class="chart-label">
+          BUS DEPENDENCE
+        </p>
 
-        <h3>Where are cities most dependent on buses?</h3>
+        <h3>
+          Which transport systems depend most heavily on buses?
+        </h3>
 
         <p>
-          This graduated symbol map groups capitals into four bus-dependence
-          classes based on the percentage of public transport trips carried
-          by buses in 2024–25. Larger symbols indicate a higher bus share.
+          This graduated symbol map groups capitals into four classes according
+          to the percentage of their public transport trips carried by buses.
+          Larger symbols represent a higher bus share.
         </p>
 
         <div id="chart5"></div>
 
         <div class="takeaway">
-          <strong>Reading the map:</strong>
-          Symbol sizes represent discrete bus-share classes rather than exact
-          proportional values. Larger circles indicate greater dependence on buses.
+
+          <strong>Important distinction:</strong>
+
+          Chart 3 measures how many bus trips occur relative to population.
+          Chart 5 instead measures how much of each city's entire public
+          transport system depends on buses.
+
         </div>
 
       </div>
+
 
 
       <!-- CHART 6 -->
 
       <div class="chart-block">
 
-        <p class="chart-label">TRANSPORT MIX</p>
+        <p class="chart-label">
+          TRANSPORT MIX
+        </p>
 
-        <h3>Every city has a different transport mix</h3>
+        <h3>
+          Every city has a different transport mix
+        </h3>
 
         <p>
           Bus dependence tells only part of the story. This heatmap compares
@@ -196,32 +259,40 @@
       </div>
 
 
+
       <!-- CHART 7 -->
 
       <div class="chart-block">
 
-        <p class="chart-label">NATIONAL MODE SHARE</p>
+        <p class="chart-label">
+          NATIONAL MODE SHARE
+        </p>
 
-        <h3>Trains and buses carry most public transport trips</h3>
+        <h3>
+          Trains and buses carry most public transport trips
+        </h3>
 
         <p>
-          Looking across all eight capital cities, trains and buses account
-          for most public transport patronage. Each square represents
-          approximately one percentage point of passenger trips in 2024–25.
-          Hover over the squares to view the exact share and passenger total.
+          Looking across all eight capitals, trains and buses account for
+          most public transport patronage. Each square represents approximately
+          one percentage point of passenger trips in 2024–25.
         </p>
 
         <div id="chart7"></div>
 
         <div class="takeaway">
+
           <strong>Key takeaway:</strong>
+
           Train and bus travel together account for the large majority of
           capital-city public transport patronage.
+
         </div>
 
       </div>
 
     </section>
+
 
 
     <!-- ================================= -->
@@ -230,7 +301,9 @@
 
     <section>
 
-      <h2>03 — FIVE DECADES ON THE MOVE</h2>
+      <h2>
+        03 — FIVE DECADES ON THE MOVE
+      </h2>
 
       <p class="section-intro">
         Public transport use has changed substantially over almost five decades.
@@ -243,9 +316,13 @@
 
       <div class="chart-block">
 
-        <p class="chart-label">LONG-TERM CHANGE</p>
+        <p class="chart-label">
+          LONG-TERM CHANGE
+        </p>
 
-        <h3>Nearly five decades of growth, disruption and recovery</h3>
+        <h3>
+          Nearly five decades of growth, disruption and recovery
+        </h3>
 
         <p>
           Select a capital city to explore how public transport patronage has
@@ -256,21 +333,29 @@
         <div id="chart8"></div>
 
         <div class="takeaway">
+
           <strong>How to explore:</strong>
+
           Choose a capital from the dropdown, then drag across the lower timeline
           to zoom into a shorter period.
+
         </div>
 
       </div>
+
 
 
       <!-- CHART 9 -->
 
       <div class="chart-block">
 
-        <p class="chart-label">CHANGING RANKS</p>
+        <p class="chart-label">
+          CHANGING RANKS
+        </p>
 
-        <h3>Which capitals moved up — and which fell behind?</h3>
+        <h3>
+          Which capitals moved up — and which fell behind?
+        </h3>
 
         <p>
           Absolute patronage tells only part of the long-term story.
@@ -282,14 +367,18 @@
         <div id="chart9"></div>
 
         <div class="takeaway">
+
           <strong>How to explore:</strong>
-          Select a capital from the dropdown to highlight its ranking trajectory
-          while the other cities remain visible for context.
+
+          Select a capital from the dropdown to highlight its ranking
+          trajectory while the other cities remain visible for context.
+
         </div>
 
       </div>
 
     </section>
+
 
 
     <!-- ================================= -->
@@ -298,7 +387,9 @@
 
     <section>
 
-      <h2>04 — THE COVID SHOCK AND RECOVERY</h2>
+      <h2>
+        04 — THE COVID SHOCK AND RECOVERY
+      </h2>
 
       <p class="section-intro">
         The COVID-19 pandemic created the largest disruption visible in
@@ -312,34 +403,46 @@
 
       <div class="chart-block">
 
-        <p class="chart-label">NATIONAL SHOCK</p>
+        <p class="chart-label">
+          NATIONAL SHOCK
+        </p>
 
-        <h3>The collapse — and the climb back</h3>
+        <h3>
+          The collapse — and the climb back
+        </h3>
 
         <p>
-          This waterfall separates the national change in capital-city
-          patronage into annual losses and gains. Orange bars indicate
-          year-on-year declines, while teal bars indicate recovery.
+          This waterfall separates national capital-city patronage change
+          into annual losses and gains. Orange bars indicate year-on-year
+          declines, while teal bars indicate recovery.
         </p>
 
         <div id="chart10"></div>
 
         <div class="takeaway">
+
           <strong>Key takeaway:</strong>
+
           The pandemic produced an unusually sharp patronage loss, followed
           by several consecutive years of recovery.
+
         </div>
 
       </div>
+
 
 
       <!-- CHART 11 -->
 
       <div class="chart-block">
 
-        <p class="chart-label">RECOVERY BY CITY</p>
+        <p class="chart-label">
+          RECOVERY BY CITY
+        </p>
 
-        <h3>Not every capital has returned to its pre-COVID level</h3>
+        <h3>
+          Not every capital has returned to its pre-COVID level
+        </h3>
 
         <p>
           Each city's 2018–19 patronage is indexed to 100. Values above 100
@@ -350,14 +453,18 @@
         <div id="chart11"></div>
 
         <div class="takeaway">
+
           <strong>Reading the chart:</strong>
+
           The vertical benchmark at 100 represents full recovery to each city's
           own 2018–19 patronage level.
+
         </div>
 
       </div>
 
     </section>
+
 
 
     <!-- ================================= -->
@@ -366,92 +473,121 @@
 
     <section class="conclusion">
 
-      <p class="chart-label">CONCLUSION</p>
+      <p class="chart-label">
+        CONCLUSION
+      </p>
 
-      <h2>One country, eight different transport stories</h2>
+      <h2>
+        One country, eight different transport stories
+      </h2>
 
       <p>
         Australia's public transport system cannot be understood through a
         single national pattern. Sydney and Melbourne dominate total patronage,
-        but population-adjusted comparisons reveal a different hierarchy.
-        Transport mode also matters: some capitals rely heavily on rail, while
-        others remain overwhelmingly bus-oriented.
+        but population-adjusted measures reveal different patterns of transport
+        intensity. Mode choice also varies substantially: some capitals operate
+        diverse multimodal networks, while others depend strongly on buses.
       </p>
 
       <p>
         Across almost five decades, patronage generally expanded before the
         COVID-19 pandemic created an unprecedented break in the trend.
-        The recovery since then has been substantial, but uneven — showing that
+        Recovery has since been substantial but uneven, demonstrating that
         Australia's capital-city transport systems continue to follow distinct
         trajectories.
       </p>
 
     </section>
 
+
   </main>
 
 
+
+  <!-- ================================= -->
+  <!-- VEGA EMBEDS -->
+  <!-- ================================= -->
+
   <script>
 
-    vegaEmbed("#chart1", "js/chart1_map_patronage.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart1",
+      "js/chart1_map_patronage.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart2", "js/chart2_ranked_bar.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart2",
+      "js/chart2_ranked_bar.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    /*
-      Chart 3 is still temporarily using the existing tile map.
-      We will replace this with the final choropleth.
-    */
-    vegaEmbed("#chart3", "js/chart3_tile_map.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart3",
+      "js/chart3_bus_dotmap.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart4", "js/chart4_lollipop_per_resident.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart4",
+      "js/chart4_lollipop_per_resident.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart5", "js/chart5_dominant_mode_map.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart5",
+      "js/chart5_dominant_mode_map.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart6", "js/chart6_mode_heatmap.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart6",
+      "js/chart6_mode_heatmap.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart7", "js/chart7_mode_waffle.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart7",
+      "js/chart7_mode_waffle.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart8", "js/chart8_timeline_overview.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart8",
+      "js/chart8_timeline_overview.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart9", "js/chart9_city_rankings.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart9",
+      "js/chart9_city_rankings.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart10", "js/chart10_covid_waterfall.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart10",
+      "js/chart10_covid_waterfall.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
 
-    vegaEmbed("#chart11", "js/chart11_recovery_bullet.vg.json", {
-      actions: false
-    }).catch(console.error);
+    vegaEmbed(
+      "#chart11",
+      "js/chart11_recovery_bullet.vg.json",
+      { actions: false }
+    ).catch(console.error);
 
   </script>
+
 
 </body>
 
