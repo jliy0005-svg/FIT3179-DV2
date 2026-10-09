@@ -35,7 +35,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_train_dotmap.csv",
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_train_dotmap_v2.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -49,7 +49,7 @@
 
       "mark": {
         "type": "circle",
-        "size": 38,
+        "size": 48,
         "color": "#2F5597",
         "opacity": 0.8,
         "stroke": "white",
