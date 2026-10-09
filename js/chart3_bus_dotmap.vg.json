@@ -13,6 +13,7 @@
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -33,6 +34,7 @@
       }
     },
 
+
     {
       "data": {
         "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_bus_per_resident_dotmap.csv",
@@ -45,17 +47,18 @@
             "Dot_Latitude": "number",
             "Bus_Trips_Million_2024_25": "number",
             "Population_2025": "number",
-            "Bus_Trips_Per_Resident_2024_25": "number"
+            "Bus_Trips_Per_Resident_2024_25": "number",
+            "Dot_Represents_Bus_Trips_Per_Resident": "number"
           }
         }
       },
 
       "mark": {
         "type": "circle",
-        "size": 70,
+        "size": 75,
         "color": "#2A9D8F",
-        "opacity": 0.85,
-        "stroke": "white",
+        "opacity": 0.88,
+        "stroke": "#FFFFFF",
         "strokeWidth": 0.8
       },
 
@@ -109,19 +112,47 @@
       }
     },
 
+
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_bus_per_resident_dotmap.csv",
 
         "format": {
           "type": "csv",
 
           "parse": {
-            "Latitude": "number",
-            "Longitude": "number"
+            "Dot_Longitude": "number",
+            "Dot_Latitude": "number",
+            "Bus_Trips_Per_Resident_2024_25": "number"
           }
         }
       },
+
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "Dot_Longitude",
+              "as": "City_Longitude"
+            },
+            {
+              "op": "mean",
+              "field": "Dot_Latitude",
+              "as": "City_Latitude"
+            },
+            {
+              "op": "max",
+              "field": "Bus_Trips_Per_Resident_2024_25",
+              "as": "Bus_Per_Resident"
+            }
+          ],
+
+          "groupby": [
+            "City"
+          ]
+        }
+      ],
 
       "mark": {
         "type": "text",
@@ -134,12 +165,12 @@
       "encoding": {
 
         "longitude": {
-          "field": "Longitude",
+          "field": "City_Longitude",
           "type": "quantitative"
         },
 
         "latitude": {
-          "field": "Latitude",
+          "field": "City_Latitude",
           "type": "quantitative"
         },
 
@@ -148,11 +179,81 @@
           "type": "nominal"
         }
       }
+    },
+
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_bus_per_resident_dotmap.csv",
+
+        "format": {
+          "type": "csv",
+
+          "parse": {
+            "Dot_Longitude": "number",
+            "Dot_Latitude": "number",
+            "Bus_Trips_Per_Resident_2024_25": "number"
+          }
+        }
+      },
+
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "Dot_Longitude",
+              "as": "City_Longitude"
+            },
+            {
+              "op": "mean",
+              "field": "Dot_Latitude",
+              "as": "City_Latitude"
+            },
+            {
+              "op": "max",
+              "field": "Bus_Trips_Per_Resident_2024_25",
+              "as": "Bus_Per_Resident"
+            }
+          ],
+
+          "groupby": [
+            "City"
+          ]
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "fontSize": 9,
+        "dy": -10,
+        "color": "#58656F"
+      },
+
+      "encoding": {
+
+        "longitude": {
+          "field": "City_Longitude",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "City_Latitude",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "Bus_Per_Resident",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
     }
 
   ],
 
   "config": {
+
     "background": "white",
 
     "view": {
