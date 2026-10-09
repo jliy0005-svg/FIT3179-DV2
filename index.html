@@ -26,7 +26,9 @@
   <main>
 
 
+    <!-- ================================= -->
     <!-- HERO -->
+    <!-- ================================= -->
 
     <header class="hero">
 
@@ -54,7 +56,9 @@
 
 
 
+    <!-- ================================= -->
     <!-- SECTION 1 -->
+    <!-- ================================= -->
 
     <section>
 
@@ -176,7 +180,9 @@
 
 
 
+    <!-- ================================= -->
     <!-- SECTION 2 -->
+    <!-- ================================= -->
 
     <section>
 
@@ -284,7 +290,9 @@
 
 
 
+    <!-- ================================= -->
     <!-- SECTION 3 -->
+    <!-- ================================= -->
 
     <section>
 
@@ -367,7 +375,9 @@
 
 
 
+    <!-- ================================= -->
     <!-- SECTION 4 -->
+    <!-- ================================= -->
 
     <section>
 
@@ -450,7 +460,9 @@
 
 
 
+    <!-- ================================= -->
     <!-- CONCLUSION -->
+    <!-- ================================= -->
 
     <section class="conclusion">
 
@@ -481,11 +493,212 @@
     </section>
 
 
+
+    <!-- ================================= -->
+    <!-- DATA, SOURCES & METHODOLOGY -->
+    <!-- ================================= -->
+
+    <section class="metadata">
+
+      <p class="chart-label">
+        ABOUT THIS VISUALISATION
+      </p>
+
+      <h2>
+        Data, methodology and acknowledgements
+      </h2>
+
+
+      <div class="metadata-grid">
+
+
+        <div class="metadata-card">
+
+          <h3>
+            Author
+          </h3>
+
+          <p>
+            <strong>[YOUR NAME]</strong><br>
+            FIT3179 Data Visualisation 2<br>
+            October 2026
+          </p>
+
+        </div>
+
+
+        <div class="metadata-card">
+
+          <h3>
+            Data coverage
+          </h3>
+
+          <p>
+            Public transport patronage is presented for Australia's eight
+            capital cities, with historical data extending from 1976–77 to
+            2024–25 where available.
+          </p>
+
+        </div>
+
+
+        <div class="metadata-card">
+
+          <h3>
+            Source 1 — BITRE
+          </h3>
+
+          <p>
+            Bureau of Infrastructure and Transport Research Economics,
+            <em>Australian Infrastructure and Transport Statistics —
+            Yearbook 2025, Chapter 2: Passengers</em>.
+          </p>
+
+          <p class="source-note">
+            Used for public transport patronage by capital city, transport
+            mode and financial year.
+          </p>
+
+          <!-- Replace BITRE_SOURCE_URL with the BITRE link supplied below -->
+          <a
+            href="BITRE_SOURCE_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View BITRE source
+          </a>
+
+        </div>
+
+
+        <div class="metadata-card">
+
+          <h3>
+            Source 2 — ABS
+          </h3>
+
+          <p>
+            Australian Bureau of Statistics,
+            <em>Regional population, 2024–25 financial year</em>.
+          </p>
+
+          <p class="source-note">
+            Used for Estimated Resident Population at 30 June 2025 for
+            Greater Capital City Statistical Areas.
+          </p>
+
+          <!-- Replace ABS_SOURCE_URL with the ABS link supplied below -->
+          <a
+            href="ABS_SOURCE_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View ABS source
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="methodology">
+
+        <h3>
+          Derived measures
+        </h3>
+
+        <p>
+          <strong>Trips per resident</strong> combines BITRE passenger-trip
+          totals with ABS Estimated Resident Population. Passenger-trip totals
+          reported in millions were converted to individual trips before being
+          divided by population.
+        </p>
+
+        <p>
+          <strong>Mode share</strong> represents the proportion of reported
+          public transport passenger trips carried by a particular transport
+          mode within each capital city.
+        </p>
+
+        <p>
+          <strong>Recovery index</strong> compares 2024–25 patronage with
+          2018–19 patronage, where 100 represents a return to the city's
+          pre-COVID level.
+        </p>
+
+        <p>
+          <strong>Chart 3 dot map:</strong> each dot represents approximately
+          five annual bus trips per resident. Dots are positioned schematically
+          around capital-city coordinates and do not indicate actual passenger
+          origins, destinations, routes or stops.
+        </p>
+
+      </div>
+
+
+      <div class="data-note">
+
+        <h3>
+          Data notes
+        </h3>
+
+        <p>
+          Source missing-value and not-applicable categories were retained
+          during data preparation rather than automatically treating them as
+          zero. Values shown as unavailable therefore should not be interpreted
+          as zero patronage.
+        </p>
+
+        <p>
+          Capital-city population refers to the Greater Capital City
+          Statistical Area definition used by the Australian Bureau of
+          Statistics.
+        </p>
+
+      </div>
+
+
+      <div class="ai-note">
+
+        <h3>
+          Generative AI acknowledgement
+        </h3>
+
+        <p>
+          Generative AI tools, including ChatGPT by OpenAI, were used extensively
+          to assist with data preparation, visualisation ideation, Vega-Lite,
+          HTML and CSS code drafting, debugging, explanatory wording and
+          refinement of the visualisation. The resulting outputs were reviewed,
+          tested, selected and modified by the author.
+        </p>
+
+      </div>
+
+
+      <div class="technical-note">
+
+        <h3>
+          Technical implementation
+        </h3>
+
+        <p>
+          Visualisations were created using Vega-Lite and embedded in a
+          single-page HTML/CSS website hosted with GitHub Pages. Geographic
+          base layers use the Vega Datasets world map.
+        </p>
+
+      </div>
+
+    </section>
+
+
   </main>
 
 
 
+  <!-- ================================= -->
   <!-- VEGA EMBEDS -->
+  <!-- ================================= -->
 
   <script>
 
