@@ -4,6 +4,8 @@
    ====================================== */
 
 
+/* RESET */
+
 * {
   box-sizing: border-box;
 }
@@ -18,6 +20,7 @@ body {
   margin: 0;
 
   background-color: #f5f3ee;
+
   color: #1f2933;
 
   font-family:
@@ -29,7 +32,10 @@ body {
 }
 
 
-/* PAGE */
+
+/* ======================================
+   PAGE
+   ====================================== */
 
 main {
   width: min(1180px, calc(100% - 60px));
@@ -41,7 +47,10 @@ main {
 }
 
 
-/* HERO */
+
+/* ======================================
+   HERO
+   ====================================== */
 
 .hero {
   margin-bottom: 65px;
@@ -54,7 +63,7 @@ main {
   color: #557084;
 
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
 
   letter-spacing: 1.6px;
 }
@@ -66,6 +75,8 @@ h1 {
   color: #173f5f;
 
   font-size: 64px;
+  font-weight: 800;
+
   line-height: 1;
 
   letter-spacing: -2px;
@@ -81,6 +92,7 @@ h1 {
   color: #53616c;
 
   font-size: 20px;
+  font-weight: 500;
 }
 
 
@@ -97,16 +109,20 @@ h1 {
 }
 
 
-/* SECTIONS */
+
+/* ======================================
+   SECTION CARDS
+   ====================================== */
 
 section {
   margin-top: 42px;
 
   padding: 38px;
 
-  background-color: white;
+  background-color: #ffffff;
 
   border: 1px solid #d9dedf;
+
   border-radius: 12px;
 }
 
@@ -122,6 +138,8 @@ section h2 {
   color: #173f5f;
 
   font-size: 28px;
+  font-weight: 750;
+
   line-height: 1.2;
 }
 
@@ -130,7 +148,7 @@ section h2 {
   max-width: 780px;
 
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 52px;
 
   color: #63707c;
 
@@ -140,10 +158,13 @@ section h2 {
 }
 
 
-/* CHART BLOCKS */
+
+/* ======================================
+   CHART BLOCKS
+   ====================================== */
 
 .chart-block {
-  margin-bottom: 75px;
+  margin-bottom: 78px;
 }
 
 
@@ -158,9 +179,9 @@ section h2 {
   color: #557084;
 
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
 
-  letter-spacing: 1.3px;
+  letter-spacing: 1.35px;
 }
 
 
@@ -171,6 +192,7 @@ section h2 {
   color: #1f2933;
 
   font-size: 22px;
+  font-weight: 700;
 
   line-height: 1.3;
 }
@@ -180,7 +202,7 @@ section h2 {
   max-width: 780px;
 
   margin-top: 0;
-  margin-bottom: 26px;
+  margin-bottom: 27px;
 
   color: #63707c;
 
@@ -190,7 +212,10 @@ section h2 {
 }
 
 
-/* TAKEAWAYS */
+
+/* ======================================
+   TAKEAWAY / METHOD BOXES
+   ====================================== */
 
 .takeaway {
   max-width: 780px;
@@ -207,11 +232,19 @@ section h2 {
 
   font-size: 14px;
 
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 
-/* VEGA CHARTS */
+.takeaway strong {
+  color: #263843;
+}
+
+
+
+/* ======================================
+   VEGA CHARTS
+   ====================================== */
 
 #chart1,
 #chart2,
@@ -229,6 +262,8 @@ section h2 {
   margin-top: 20px;
 
   overflow-x: auto;
+
+  scrollbar-width: thin;
 }
 
 
@@ -244,13 +279,18 @@ section h2 {
 
 .vega-embed svg {
   max-width: 100%;
+
+  height: auto;
 }
 
 
-/* VEGA CONTROLS */
+
+/* ======================================
+   VEGA CONTROLS
+   ====================================== */
 
 .vega-bindings {
-  margin-top: 12px;
+  margin-top: 14px;
 
   color: #374151;
 
@@ -258,38 +298,54 @@ section h2 {
 }
 
 
-.vega-bind select {
-  margin-left: 6px;
-
-  padding: 4px 8px;
-
-  background-color: white;
-
-  border: 1px solid #CBD5E1;
-  border-radius: 4px;
-
-  color: #374151;
+.vega-bind {
+  margin-bottom: 6px;
 }
 
 
-/* CONCLUSION */
+.vega-bind select {
+  margin-left: 7px;
+
+  padding: 5px 9px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 4px;
+
+  color: #374151;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+}
+
+
+
+/* ======================================
+   CONCLUSION
+   ====================================== */
 
 .conclusion {
   background-color: #173f5f;
 
   border: none;
 
-  color: white;
+  color: #ffffff;
 }
 
 
 .conclusion .chart-label {
-  color: #BFD1DD;
+  color: #bfd1dd;
 }
 
 
 .conclusion h2 {
-  color: white;
+  color: #ffffff;
 
   border-bottom-color: rgba(255, 255, 255, 0.25);
 }
@@ -298,7 +354,7 @@ section h2 {
 .conclusion p:not(.chart-label) {
   max-width: 800px;
 
-  color: #E5EDF2;
+  color: #e5edf2;
 
   font-size: 15px;
 
@@ -306,7 +362,10 @@ section h2 {
 }
 
 
-/* RESPONSIVE */
+
+/* ======================================
+   RESPONSIVE
+   ====================================== */
 
 @media (max-width: 800px) {
 
@@ -314,6 +373,11 @@ section h2 {
     width: calc(100% - 30px);
 
     padding-top: 40px;
+  }
+
+
+  .hero {
+    margin-bottom: 45px;
   }
 
 
@@ -329,8 +393,15 @@ section h2 {
   }
 
 
+  .intro {
+    font-size: 14px;
+  }
+
+
   section {
     padding: 22px;
+
+    margin-top: 28px;
   }
 
 
@@ -339,13 +410,28 @@ section h2 {
   }
 
 
+  .section-intro {
+    margin-bottom: 40px;
+  }
+
+
+  .chart-block {
+    margin-bottom: 58px;
+  }
+
+
   .chart-block h3 {
     font-size: 19px;
   }
 
 
-  .chart-block {
-    margin-bottom: 55px;
+  .chart-block > p:not(.chart-label) {
+    font-size: 14px;
+  }
+
+
+  .takeaway {
+    font-size: 13px;
   }
 
 }
