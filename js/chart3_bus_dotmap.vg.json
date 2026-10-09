@@ -13,7 +13,6 @@
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -33,7 +32,6 @@
         "strokeWidth": 0.8
       }
     },
-
 
     {
       "data": {
@@ -80,38 +78,33 @@
             "type": "nominal",
             "title": "Capital city"
           },
-
           {
             "field": "Bus_Trips_Per_Resident_2024_25",
             "type": "quantitative",
             "title": "Bus trips per resident",
             "format": ".1f"
           },
-
           {
             "field": "Bus_Trips_Million_2024_25",
             "type": "quantitative",
             "title": "Bus trips (million)",
             "format": ".1f"
           },
-
           {
             "field": "Population_2025",
             "type": "quantitative",
             "title": "Population",
             "format": ",.0f"
           },
-
           {
             "field": "Dot_Represents_Bus_Trips_Per_Resident",
             "type": "quantitative",
-            "title": "Each dot represents",
+            "title": "Trips per resident per dot",
             "format": ".0f"
           }
         ]
       }
     },
-
 
     {
       "data": {
@@ -119,7 +112,6 @@
 
         "format": {
           "type": "csv",
-
           "parse": {
             "Dot_Longitude": "number",
             "Dot_Latitude": "number",
@@ -147,7 +139,6 @@
               "as": "Bus_Per_Resident"
             }
           ],
-
           "groupby": [
             "City"
           ]
@@ -158,12 +149,11 @@
         "type": "text",
         "fontSize": 11,
         "fontWeight": "bold",
-        "dy": -22,
+        "dy": -23,
         "color": "#27343D"
       },
 
       "encoding": {
-
         "longitude": {
           "field": "City_Longitude",
           "type": "quantitative"
@@ -181,14 +171,12 @@
       }
     },
 
-
     {
       "data": {
         "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_bus_per_resident_dotmap.csv",
 
         "format": {
           "type": "csv",
-
           "parse": {
             "Dot_Longitude": "number",
             "Dot_Latitude": "number",
@@ -216,7 +204,6 @@
               "as": "Bus_Per_Resident"
             }
           ],
-
           "groupby": [
             "City"
           ]
@@ -231,7 +218,6 @@
       },
 
       "encoding": {
-
         "longitude": {
           "field": "City_Longitude",
           "type": "quantitative"
@@ -253,7 +239,6 @@
   ],
 
   "config": {
-
     "background": "white",
 
     "view": {
