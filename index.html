@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
   <main>
@@ -31,15 +32,17 @@
       <p class="intro">
         Australia's capital cities do not move in the same way.
         This visualisation compares where public transport use is highest,
-        how usage changes after population is considered, how trains, trams,
-        buses and ferries shape each city's transport system, and how patronage
-        has changed over time.
+        how usage changes after population is considered, how different modes
+        shape each city's transport system, and how patronage has changed
+        over time.
       </p>
 
     </header>
 
 
+    <!-- ================================= -->
     <!-- SECTION 1 -->
+    <!-- ================================= -->
 
     <section>
 
@@ -53,6 +56,8 @@
       </p>
 
 
+      <!-- CHART 1 -->
+
       <div class="chart-block">
 
         <p class="chart-label">TOTAL PATRONAGE</p>
@@ -60,7 +65,7 @@
         <h3>Australia's biggest public transport markets</h3>
 
         <p>
-          Circle size represents total public transport passenger trips
+          Circle area represents total public transport passenger trips
           across Australia's capital cities in 2024–25.
         </p>
 
@@ -68,6 +73,8 @@
 
       </div>
 
+
+      <!-- CHART 2 -->
 
       <div class="chart-block">
 
@@ -86,6 +93,8 @@
       </div>
 
 
+      <!-- CHART 3 -->
+
       <div class="chart-block">
 
         <p class="chart-label">PER RESIDENT</p>
@@ -93,16 +102,18 @@
         <h3>Does city size change the picture?</h3>
 
         <p>
-          Total patronage partly reflects population size. This tile-grid map
-          compares public transport trips per resident, giving each capital
-          equal visual space while approximately preserving geographic position.
-          Darker tiles indicate more trips per resident in 2024–25.
+          Total patronage partly reflects population size. This view compares
+          public transport trips per resident across the eight capitals.
+          Darker values indicate greater public transport use relative to
+          population in 2024–25.
         </p>
 
         <div id="chart3"></div>
 
       </div>
 
+
+      <!-- CHART 4 -->
 
       <div class="chart-block">
 
@@ -124,35 +135,48 @@
     </section>
 
 
+    <!-- ================================= -->
     <!-- SECTION 2 -->
+    <!-- ================================= -->
 
     <section>
 
       <h2>02 — EVERY CITY MOVES DIFFERENTLY</h2>
 
       <p class="section-intro">
-        Public transport systems are not structured the same way across Australia.
-        Some cities depend heavily on trains, while others rely much more strongly
-        on buses, trams, light rail or ferries.
+        Public transport systems are structured differently across Australia.
+        Some cities rely strongly on rail, while others depend much more heavily
+        on buses. Looking at mode dependence reveals another layer of difference
+        between the capitals.
       </p>
 
 
+      <!-- CHART 5 -->
+
       <div class="chart-block">
 
-        <p class="chart-label">DOMINANT MODE</p>
+        <p class="chart-label">BUS DEPENDENCE</p>
 
-        <h3>Which transport mode dominates each capital?</h3>
+        <h3>Where are cities most dependent on buses?</h3>
 
         <p>
-          Equal-sized symbols give every capital the same visual importance,
-          while colour identifies the mode carrying the largest number of
-          passenger trips in 2024–25.
+          This graduated symbol map groups capitals into four bus-dependence
+          classes based on the percentage of public transport trips carried
+          by buses in 2024–25. Larger symbols indicate a higher bus share.
         </p>
 
         <div id="chart5"></div>
 
+        <div class="takeaway">
+          <strong>Reading the map:</strong>
+          Symbol sizes represent discrete bus-share classes rather than exact
+          proportional values. Larger circles indicate greater dependence on buses.
+        </div>
+
       </div>
 
+
+      <!-- CHART 6 -->
 
       <div class="chart-block">
 
@@ -161,7 +185,7 @@
         <h3>Every city has a different transport mix</h3>
 
         <p>
-          Dominant mode tells only part of the story. This heatmap compares
+          Bus dependence tells only part of the story. This heatmap compares
           the percentage of each city's public transport patronage carried
           by trains, trams and light rail, buses and ferries. Darker cells
           indicate a larger share of that city's total trips.
@@ -171,6 +195,8 @@
 
       </div>
 
+
+      <!-- CHART 7 -->
 
       <div class="chart-block">
 
@@ -198,7 +224,9 @@
     </section>
 
 
+    <!-- ================================= -->
     <!-- SECTION 3 -->
+    <!-- ================================= -->
 
     <section>
 
@@ -210,6 +238,8 @@
         most dramatically, the COVID-19 disruption.
       </p>
 
+
+      <!-- CHART 8 -->
 
       <div class="chart-block">
 
@@ -233,6 +263,8 @@
 
       </div>
 
+
+      <!-- CHART 9 -->
 
       <div class="chart-block">
 
@@ -260,7 +292,9 @@
     </section>
 
 
+    <!-- ================================= -->
     <!-- SECTION 4 -->
+    <!-- ================================= -->
 
     <section>
 
@@ -273,6 +307,8 @@
         has not occurred equally across every capital.
       </p>
 
+
+      <!-- CHART 10 -->
 
       <div class="chart-block">
 
@@ -296,6 +332,8 @@
 
       </div>
 
+
+      <!-- CHART 11 -->
 
       <div class="chart-block">
 
@@ -322,7 +360,9 @@
     </section>
 
 
+    <!-- ================================= -->
     <!-- CONCLUSION -->
+    <!-- ================================= -->
 
     <section class="conclusion">
 
@@ -357,41 +397,55 @@
       actions: false
     }).catch(console.error);
 
+
     vegaEmbed("#chart2", "js/chart2_ranked_bar.vg.json", {
       actions: false
     }).catch(console.error);
 
+
+    /*
+      Chart 3 is still temporarily using the existing tile map.
+      We will replace this with the final choropleth.
+    */
     vegaEmbed("#chart3", "js/chart3_tile_map.vg.json", {
       actions: false
     }).catch(console.error);
+
 
     vegaEmbed("#chart4", "js/chart4_lollipop_per_resident.vg.json", {
       actions: false
     }).catch(console.error);
 
+
     vegaEmbed("#chart5", "js/chart5_dominant_mode_map.vg.json", {
       actions: false
     }).catch(console.error);
+
 
     vegaEmbed("#chart6", "js/chart6_mode_heatmap.vg.json", {
       actions: false
     }).catch(console.error);
 
+
     vegaEmbed("#chart7", "js/chart7_mode_waffle.vg.json", {
       actions: false
     }).catch(console.error);
+
 
     vegaEmbed("#chart8", "js/chart8_timeline_overview.vg.json", {
       actions: false
     }).catch(console.error);
 
+
     vegaEmbed("#chart9", "js/chart9_city_rankings.vg.json", {
       actions: false
     }).catch(console.error);
 
+
     vegaEmbed("#chart10", "js/chart10_covid_waterfall.vg.json", {
       actions: false
     }).catch(console.error);
+
 
     vegaEmbed("#chart11", "js/chart11_recovery_bullet.vg.json", {
       actions: false
