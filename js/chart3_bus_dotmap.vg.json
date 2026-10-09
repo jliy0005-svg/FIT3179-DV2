@@ -1,0 +1,164 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 650,
+  "height": 430,
+
+  "projection": {
+    "type": "mercator"
+  },
+
+  "layer": [
+
+    {
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+
+      "transform": [
+        {
+          "filter": "datum.id == 36"
+        }
+      ],
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E8ECEF",
+        "stroke": "#AAB4BC",
+        "strokeWidth": 0.8
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/chart3_bus_per_resident_dotmap.csv",
+
+        "format": {
+          "type": "csv",
+
+          "parse": {
+            "Dot_Longitude": "number",
+            "Dot_Latitude": "number",
+            "Bus_Trips_Million_2024_25": "number",
+            "Population_2025": "number",
+            "Bus_Trips_Per_Resident_2024_25": "number"
+          }
+        }
+      },
+
+      "mark": {
+        "type": "circle",
+        "size": 70,
+        "color": "#2A9D8F",
+        "opacity": 0.85,
+        "stroke": "white",
+        "strokeWidth": 0.8
+      },
+
+      "encoding": {
+
+        "longitude": {
+          "field": "Dot_Longitude",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "Dot_Latitude",
+          "type": "quantitative"
+        },
+
+        "tooltip": [
+          {
+            "field": "City",
+            "type": "nominal",
+            "title": "Capital city"
+          },
+
+          {
+            "field": "Bus_Trips_Per_Resident_2024_25",
+            "type": "quantitative",
+            "title": "Bus trips per resident",
+            "format": ".1f"
+          },
+
+          {
+            "field": "Bus_Trips_Million_2024_25",
+            "type": "quantitative",
+            "title": "Bus trips (million)",
+            "format": ".1f"
+          },
+
+          {
+            "field": "Population_2025",
+            "type": "quantitative",
+            "title": "Population",
+            "format": ",.0f"
+          },
+
+          {
+            "field": "Dot_Represents_Bus_Trips_Per_Resident",
+            "type": "quantitative",
+            "title": "Each dot represents",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
+
+        "format": {
+          "type": "csv",
+
+          "parse": {
+            "Latitude": "number",
+            "Longitude": "number"
+          }
+        }
+      },
+
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "dy": -22,
+        "color": "#27343D"
+      },
+
+      "encoding": {
+
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "City",
+          "type": "nominal"
+        }
+      }
+    }
+
+  ],
+
+  "config": {
+    "background": "white",
+
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Arial"
+  }
+}
