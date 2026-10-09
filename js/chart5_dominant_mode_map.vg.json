@@ -35,21 +35,62 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/mode_share_2025.csv",
+
         "format": {
           "type": "csv",
+
           "parse": {
-            "Latitude": "number",
-            "Longitude": "number",
-            "Total_Trips_Million_2024_25": "number",
-            "Trips_Per_Resident_2024_25": "number"
+            "Mode_Share_Percent_2024_25": "number",
+            "Trips_Million_2024_25": "number"
           }
         }
       },
 
+      "transform": [
+
+        {
+          "filter": "datum.Mode == 'Bus'"
+        },
+
+        {
+          "lookup": "City",
+
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
+
+              "format": {
+                "type": "csv",
+
+                "parse": {
+                  "Latitude": "number",
+                  "Longitude": "number",
+                  "Total_Trips_Million_2024_25": "number"
+                }
+              }
+            },
+
+            "key": "City",
+
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Total_Trips_Million_2024_25"
+            ]
+          }
+        },
+
+        {
+          "calculate": "datum.Mode_Share_Percent_2024_25 < 30 ? 'Low (<30%)' : datum.Mode_Share_Percent_2024_25 < 50 ? 'Moderate (30–49%)' : datum.Mode_Share_Percent_2024_25 < 75 ? 'High (50–74%)' : 'Very high (75%+)'",
+          "as": "Bus_Dependency_Class"
+        }
+
+      ],
+
       "mark": {
         "type": "circle",
-        "size": 420,
+        "color": "#2A9D8F",
         "opacity": 0.9,
         "stroke": "white",
         "strokeWidth": 1.5
@@ -67,24 +108,25 @@
           "type": "quantitative"
         },
 
-        "color": {
-          "field": "Dominant_Mode",
+        "size": {
+          "field": "Bus_Dependency_Class",
           "type": "nominal",
-          "title": "Dominant mode",
+
+          "title": "Bus share class",
 
           "scale": {
             "domain": [
-              "Train",
-              "Tram / light rail",
-              "Bus",
-              "Ferry"
+              "Low (<30%)",
+              "Moderate (30–49%)",
+              "High (50–74%)",
+              "Very high (75%+)"
             ],
 
             "range": [
-              "#2F5597",
-              "#E69F00",
-              "#2A9D8F",
-              "#7B61A8"
+              120,
+              320,
+              650,
+              1100
             ]
           },
 
@@ -92,8 +134,7 @@
             "orient": "bottom",
             "direction": "horizontal",
             "titleFontSize": 12,
-            "labelFontSize": 11,
-            "symbolSize": 130
+            "labelFontSize": 11
           }
         },
 
@@ -106,22 +147,29 @@
           },
 
           {
-            "field": "Dominant_Mode",
+            "field": "Mode_Share_Percent_2024_25",
+            "type": "quantitative",
+            "title": "Bus share of trips",
+            "format": ".1f"
+          },
+
+          {
+            "field": "Bus_Dependency_Class",
             "type": "nominal",
-            "title": "Dominant mode"
+            "title": "Bus dependence"
+          },
+
+          {
+            "field": "Trips_Million_2024_25",
+            "type": "quantitative",
+            "title": "Bus trips (million)",
+            "format": ".1f"
           },
 
           {
             "field": "Total_Trips_Million_2024_25",
             "type": "quantitative",
-            "title": "Passenger trips (million)",
-            "format": ".1f"
-          },
-
-          {
-            "field": "Trips_Per_Resident_2024_25",
-            "type": "quantitative",
-            "title": "Trips per resident",
+            "title": "Total trips (million)",
             "format": ".1f"
           }
 
@@ -129,11 +177,14 @@
       }
     },
 
+
     {
       "data": {
         "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
+
         "format": {
           "type": "csv",
+
           "parse": {
             "Latitude": "number",
             "Longitude": "number"
@@ -145,7 +196,7 @@
         "type": "text",
         "fontSize": 11,
         "fontWeight": "bold",
-        "dy": -17,
+        "dy": -20,
         "color": "#27343D"
       },
 
