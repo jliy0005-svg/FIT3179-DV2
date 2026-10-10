@@ -31,7 +31,9 @@ body {
 
 
 
-/* PAGE */
+/* ======================================
+   PAGE
+   ====================================== */
 
 main {
   width: min(1180px, calc(100% - 60px));
@@ -44,7 +46,9 @@ main {
 
 
 
-/* HERO */
+/* ======================================
+   HERO
+   ====================================== */
 
 .hero {
   margin-bottom: 65px;
@@ -104,7 +108,9 @@ h1 {
 
 
 
-/* SECTION CARDS */
+/* ======================================
+   SECTION CARDS
+   ====================================== */
 
 section {
   margin-top: 42px;
@@ -151,7 +157,9 @@ section h2 {
 
 
 
-/* CHART BLOCKS */
+/* ======================================
+   CHART BLOCKS
+   ====================================== */
 
 .chart-block {
   margin-bottom: 78px;
@@ -203,12 +211,59 @@ section h2 {
 
 
 
-/* TAKEAWAY BOXES */
+/* ======================================
+   INSIGHT ANNOTATIONS
+   ====================================== */
+
+.insight-note {
+  max-width: 780px;
+
+  margin-top: 18px;
+
+  padding: 13px 16px;
+
+  background-color: #f8fafb;
+
+  border-left: 4px solid #2a9d8f;
+
+  border-radius: 0 6px 6px 0;
+
+  color: #43515c;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+.insight-note strong {
+  color: #173f5f;
+}
+
+
+.insight-kicker {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #2a7f75;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+
+
+/* ======================================
+   TAKEAWAY / METHOD BOXES
+   ====================================== */
 
 .takeaway {
   max-width: 780px;
 
-  margin-top: 28px;
+  margin-top: 18px;
 
   padding: 14px 17px;
 
@@ -230,7 +285,9 @@ section h2 {
 
 
 
-/* VEGA CHARTS */
+/* ======================================
+   VEGA CHARTS
+   ====================================== */
 
 #chart1,
 #chart2,
@@ -271,7 +328,9 @@ section h2 {
 
 
 
-/* VEGA CONTROLS */
+/* ======================================
+   VEGA CONTROLS
+   ====================================== */
 
 .vega-bindings {
   margin-top: 14px;
@@ -310,7 +369,9 @@ section h2 {
 
 
 
-/* CONCLUSION */
+/* ======================================
+   CONCLUSION
+   ====================================== */
 
 .conclusion {
   background-color: #173f5f;
@@ -346,7 +407,7 @@ section h2 {
 
 
 /* ======================================
-   METADATA / SOURCES
+   METADATA
    ====================================== */
 
 .metadata {
@@ -451,7 +512,6 @@ section h2 {
 
 .methodology,
 .data-note,
-.ai-note,
 .technical-note {
   max-width: 850px;
 
@@ -464,6 +524,10 @@ section h2 {
 
 
 .ai-note {
+  max-width: 850px;
+
+  margin-top: 26px;
+
   padding: 20px;
 
   background-color: #f6f8f9;
@@ -475,7 +539,9 @@ section h2 {
 
 
 
-/* RESPONSIVE */
+/* ======================================
+   RESPONSIVE
+   ====================================== */
 
 @media (max-width: 800px) {
 
@@ -540,7 +606,8 @@ section h2 {
   }
 
 
-  .takeaway {
+  .takeaway,
+  .insight-note {
     font-size: 13px;
   }
 
