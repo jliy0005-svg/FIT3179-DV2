@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap');
+
+
 /* ======================================
    HOW AUSTRALIA MOVES
    FIT3179 DATA VISUALISATION 2
@@ -22,6 +25,7 @@ body {
   color: #1f2933;
 
   font-family:
+    "Barlow",
     Arial,
     Helvetica,
     sans-serif;
@@ -40,8 +44,8 @@ main {
 
   margin: 0 auto;
 
-  padding-top: 65px;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 90px;
 }
 
 
@@ -51,7 +55,7 @@ main {
    ====================================== */
 
 .hero {
-  margin-bottom: 65px;
+  margin-bottom: 58px;
 }
 
 
@@ -77,7 +81,7 @@ h1 {
 
   line-height: 1;
 
-  letter-spacing: -2px;
+  letter-spacing: -1.6px;
 }
 
 
@@ -95,7 +99,7 @@ h1 {
 
 
 .intro {
-  max-width: 780px;
+  max-width: 800px;
 
   margin: 0;
 
@@ -113,7 +117,7 @@ h1 {
    ====================================== */
 
 section {
-  margin-top: 42px;
+  margin-top: 38px;
 
   padding: 38px;
 
@@ -143,10 +147,10 @@ section h2 {
 
 
 .section-intro {
-  max-width: 780px;
+  max-width: 800px;
 
   margin-top: 0;
-  margin-bottom: 52px;
+  margin-bottom: 48px;
 
   color: #63707c;
 
@@ -162,7 +166,7 @@ section h2 {
    ====================================== */
 
 .chart-block {
-  margin-bottom: 78px;
+  margin-bottom: 64px;
 }
 
 
@@ -197,10 +201,10 @@ section h2 {
 
 
 .chart-block > p:not(.chart-label) {
-  max-width: 780px;
+  max-width: 820px;
 
   margin-top: 0;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
 
   color: #63707c;
 
@@ -216,9 +220,9 @@ section h2 {
    ====================================== */
 
 .insight-note {
-  max-width: 780px;
+  max-width: 820px;
 
-  margin-top: 18px;
+  margin-top: 20px;
 
   padding: 13px 16px;
 
@@ -238,13 +242,15 @@ section h2 {
 
 .insight-note strong {
   color: #173f5f;
+
+  font-weight: 700;
 }
 
 
 .insight-kicker {
   display: block;
 
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 
   color: #2a7f75;
 
@@ -257,11 +263,11 @@ section h2 {
 
 
 /* ======================================
-   TAKEAWAY / METHOD BOXES
+   TAKEAWAY BOXES
    ====================================== */
 
 .takeaway {
-  max-width: 780px;
+  max-width: 820px;
 
   margin-top: 18px;
 
@@ -281,12 +287,14 @@ section h2 {
 
 .takeaway strong {
   color: #263843;
+
+  font-weight: 700;
 }
 
 
 
 /* ======================================
-   VEGA CHARTS
+   VEGA CHART CONTAINERS
    ====================================== */
 
 #chart1,
@@ -304,14 +312,28 @@ section h2 {
 
   margin-top: 20px;
 
+  text-align: center;
+
   overflow-x: auto;
 
   scrollbar-width: thin;
 }
 
 
+
+/* Centre Vega charts */
+
 .vega-embed {
-  width: 100%;
+  display: inline-block;
+
+  width: auto;
+
+  max-width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: left;
 }
 
 
@@ -321,9 +343,23 @@ section h2 {
 
 
 .vega-embed svg {
+  display: block;
+
   max-width: 100%;
 
   height: auto;
+}
+
+
+
+/* Try to keep font consistent inside Vega */
+
+.vega-embed text {
+  font-family:
+    "Barlow",
+    Arial,
+    Helvetica,
+    sans-serif !important;
 }
 
 
@@ -337,12 +373,20 @@ section h2 {
 
   color: #374151;
 
+  font-family:
+    "Barlow",
+    Arial,
+    Helvetica,
+    sans-serif;
+
   font-size: 13px;
+
+  text-align: left;
 }
 
 
 .vega-bind {
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 
 
@@ -360,6 +404,7 @@ section h2 {
   color: #374151;
 
   font-family:
+    "Barlow",
     Arial,
     Helvetica,
     sans-serif;
@@ -395,7 +440,7 @@ section h2 {
 
 
 .conclusion p:not(.chart-label) {
-  max-width: 800px;
+  max-width: 820px;
 
   color: #e5edf2;
 
@@ -416,7 +461,7 @@ section h2 {
 
 
 .metadata > h2 {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 
@@ -426,9 +471,9 @@ section h2 {
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 20px;
+  gap: 18px;
 
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 
@@ -454,6 +499,7 @@ section h2 {
   color: #173f5f;
 
   font-size: 16px;
+  font-weight: 700;
 }
 
 
@@ -515,9 +561,9 @@ section h2 {
 .technical-note {
   max-width: 850px;
 
-  margin-top: 26px;
+  margin-top: 24px;
 
-  padding-top: 24px;
+  padding-top: 22px;
 
   border-top: 1px solid #dde3e7;
 }
@@ -526,7 +572,7 @@ section h2 {
 .ai-note {
   max-width: 850px;
 
-  margin-top: 26px;
+  margin-top: 24px;
 
   padding: 20px;
 
@@ -543,22 +589,43 @@ section h2 {
    RESPONSIVE
    ====================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
   main {
-    width: calc(100% - 30px);
+    width: calc(100% - 36px);
 
-    padding-top: 40px;
-  }
-
-
-  .hero {
-    margin-bottom: 45px;
+    padding-top: 45px;
   }
 
 
   h1 {
-    font-size: 42px;
+    font-size: 52px;
+  }
+
+
+  section {
+    padding: 30px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  main {
+    width: calc(100% - 24px);
+
+    padding-top: 35px;
+  }
+
+
+  .hero {
+    margin-bottom: 40px;
+  }
+
+
+  h1 {
+    font-size: 40px;
 
     letter-spacing: -1px;
   }
@@ -575,24 +642,24 @@ section h2 {
 
 
   section {
-    padding: 22px;
+    padding: 20px;
 
-    margin-top: 28px;
+    margin-top: 26px;
   }
 
 
   section h2 {
-    font-size: 23px;
+    font-size: 22px;
   }
 
 
   .section-intro {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
 
   .chart-block {
-    margin-bottom: 58px;
+    margin-bottom: 52px;
   }
 
 
