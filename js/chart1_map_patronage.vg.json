@@ -1,26 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportional symbol map of 2024-25 public transport patronage across Australian capital cities.",
 
-  "width": 600,
-  "height": 430,
-
-  "title": {
-    "text": "Public Transport Patronage Across Australian Capitals",
-    "subtitle": "Annual passenger trips, 2024–25",
-    "anchor": "start",
-    "fontSize": 18,
-    "subtitleFontSize": 12
-  },
+  "width": 650,
+  "height": 410,
 
   "projection": {
-    "type": "mercator"
+    "type": "equalEarth"
   },
 
   "layer": [
-
     {
       "data": {
-        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-110m.json",
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -43,18 +35,15 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/refs/heads/main/data/city_summary_chart_ready.csv",
-        "format": {
-          "type": "csv"
-        }
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv"
       },
 
       "mark": {
         "type": "circle",
-        "color": "#173F5F",
-        "opacity": 0.8,
-        "stroke": "white",
-        "strokeWidth": 1.2
+        "opacity": 0.82,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.2,
+        "color": "#173F5F"
       },
 
       "encoding": {
@@ -73,14 +62,20 @@
           "field": "Total_Trips_Million_2024_25",
           "type": "quantitative",
           "title": "Passenger trips (million)",
+
           "scale": {
-            "range": [70, 1600]
+            "domain": [0, 800],
+            "range": [0, 1800]
           },
+
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
+            "values": [200, 400, 600, 800],
+            "title": "Passenger trips (million)",
             "titleFontSize": 12,
-            "labelFontSize": 11
+            "labelFontSize": 11,
+            "symbolOpacity": 0.82
           }
         },
 
@@ -94,7 +89,7 @@
             "field": "Total_Trips_Million_2024_25",
             "type": "quantitative",
             "title": "Passenger trips (million)",
-            "format": ".1f"
+            "format": ",.1f"
           },
           {
             "field": "Trips_Per_Resident_2024_25",
@@ -113,21 +108,12 @@
   ],
 
   "config": {
-    "background": "white",
+    "background": null,
 
     "view": {
       "stroke": null
     },
 
-    "font": "Arial",
-
-    "title": {
-      "color": "#1F2933"
-    },
-
-    "legend": {
-      "labelColor": "#4B5563",
-      "titleColor": "#1F2933"
-    }
+    "font": "Barlow"
   }
 }
