@@ -1,18 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
+  "description": "Graduated symbol map showing each Australian capital city's dependence on buses in 2024-25.",
+
   "width": 650,
-  "height": 430,
+  "height": 410,
 
   "projection": {
-    "type": "mercator"
+    "type": "equalEarth"
   },
 
   "layer": [
 
     {
       "data": {
-        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/world-110m.json",
+
         "format": {
           "type": "topojson",
           "feature": "countries"
@@ -35,65 +38,28 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/mode_share_2025.csv",
-
-        "format": {
-          "type": "csv",
-
-          "parse": {
-            "Mode_Share_Percent_2024_25": "number",
-            "Trips_Million_2024_25": "number"
-          }
-        }
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv"
       },
 
       "transform": [
 
         {
-          "filter": "datum.Mode == 'Bus'"
+          "calculate": "datum.Bus_Trips_Million_2024_25 / datum.Total_Trips_Million_2024_25 * 100",
+          "as": "Bus_Share"
         },
 
         {
-          "lookup": "City",
-
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
-
-              "format": {
-                "type": "csv",
-
-                "parse": {
-                  "Latitude": "number",
-                  "Longitude": "number",
-                  "Total_Trips_Million_2024_25": "number"
-                }
-              }
-            },
-
-            "key": "City",
-
-            "fields": [
-              "Latitude",
-              "Longitude",
-              "Total_Trips_Million_2024_25"
-            ]
-          }
-        },
-
-        {
-          "calculate": "datum.Mode_Share_Percent_2024_25 < 30 ? 'Low (<30%)' : datum.Mode_Share_Percent_2024_25 < 50 ? 'Moderate (30–49%)' : datum.Mode_Share_Percent_2024_25 < 75 ? 'High (50–74%)' : 'Very high (75%+)'",
-          "as": "Bus_Dependency_Class"
+          "calculate": "datum.Bus_Share < 30 ? 'Low (<30%)' : datum.Bus_Share < 50 ? 'Moderate (30–49%)' : datum.Bus_Share < 75 ? 'High (50–74%)' : 'Very high (75%+)'",
+          "as": "Bus_Class"
         }
 
       ],
 
       "mark": {
         "type": "circle",
-        "color": "#2A9D8F",
         "opacity": 0.9,
-        "stroke": "white",
-        "strokeWidth": 1.5
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.2
       },
 
       "encoding": {
@@ -109,12 +75,18 @@
         },
 
         "size": {
-          "field": "Bus_Dependency_Class",
-          "type": "nominal",
+          "field": "Bus_Class",
+          "type": "ordinal",
 
-          "title": "Bus share class",
+          "sort": [
+            "Low (<30%)",
+            "Moderate (30–49%)",
+            "High (50–74%)",
+            "Very high (75%+)"
+          ],
 
           "scale": {
+
             "domain": [
               "Low (<30%)",
               "Moderate (30–49%)",
@@ -123,14 +95,15 @@
             ],
 
             "range": [
-              120,
-              320,
+              90,
+              280,
               650,
-              1100
+              1200
             ]
           },
 
           "legend": {
+            "title": "Bus share class",
             "orient": "bottom",
             "direction": "horizontal",
             "titleFontSize": 12,
@@ -138,65 +111,68 @@
           }
         },
 
-        "tooltip": [
+        "color": {
+          "field": "Bus_Class",
+          "type": "ordinal",
 
+          "scale": {
+
+            "domain": [
+              "Low (<30%)",
+              "Moderate (30–49%)",
+              "High (50–74%)",
+              "Very high (75%+)"
+            ],
+
+            "range": [
+              "#B7E4DC",
+              "#70C7BA",
+              "#2A9D8F",
+              "#176B61"
+            ]
+          },
+
+          "legend": null
+        },
+
+        "tooltip": [
           {
             "field": "City",
             "type": "nominal",
             "title": "Capital city"
           },
-
           {
-            "field": "Mode_Share_Percent_2024_25",
+            "field": "Bus_Share",
             "type": "quantitative",
             "title": "Bus share of trips",
             "format": ".1f"
           },
-
           {
-            "field": "Bus_Dependency_Class",
-            "type": "nominal",
-            "title": "Bus dependence"
-          },
-
-          {
-            "field": "Trips_Million_2024_25",
+            "field": "Bus_Trips_Million_2024_25",
             "type": "quantitative",
             "title": "Bus trips (million)",
             "format": ".1f"
           },
-
           {
             "field": "Total_Trips_Million_2024_25",
             "type": "quantitative",
-            "title": "Total trips (million)",
+            "title": "All public transport trips (million)",
             "format": ".1f"
           }
-
         ]
       }
     },
 
-
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv",
-
-        "format": {
-          "type": "csv",
-
-          "parse": {
-            "Latitude": "number",
-            "Longitude": "number"
-          }
-        }
+        "url": "https://raw.githubusercontent.com/jliy0005-svg/FIT3179-DV2/main/data/city_summary_chart_ready.csv"
       },
 
       "mark": {
         "type": "text",
         "fontSize": 11,
-        "fontWeight": "bold",
-        "dy": -20,
+        "fontWeight": 600,
+        "dy": -15,
         "color": "#27343D"
       },
 
@@ -223,18 +199,12 @@
 
   "config": {
 
-    "background": "white",
+    "background": null,
 
     "view": {
       "stroke": null
     },
 
-    "font": "Arial",
-
-    "legend": {
-      "labelColor": "#4B5563",
-      "titleColor": "#1F2933"
-    }
-
+    "font": "Barlow"
   }
 }
