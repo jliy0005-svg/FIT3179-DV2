@@ -5,7 +5,7 @@
   "height": 430,
 
   "projection": {
-    "type": "mercator"
+    "type": "equalEarth"
   },
 
   "layer": [
